@@ -63,7 +63,7 @@
     "pubcheck": "bun run --parallel 'attw --pack --profile esm-only' publint",
     "check": "bun run --parallel lint unused pubcheck",
     "test": "bun test",
-    "prerelease": "bun run build && bun run --parallel check test",
+    "prerelease": "bun run --parallel check test",
     "release": "bumpp"
   },
   "devDependencies": {
