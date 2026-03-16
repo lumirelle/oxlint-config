@@ -14,3 +14,4 @@ jobs:
       id-token: write
     with:
       publish: true
+      build: ''
