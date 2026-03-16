@@ -1,0 +1,66 @@
+{
+  "$schema": "../node_modules/oxlint/configuration_schema.json",
+  "plugins": ["eslint"],
+  "categories": {
+    "correctness": "error",
+    "nursery": "error",
+    "pedantic": "error",
+    "perf": "error",
+    "restriction": "error",
+    "style": "error",
+    "suspicious": "error"
+  },
+  "rules": {
+    // Some times we may comment some code temporarily, the auto-fix of this rule may annoy us by capitalizing the code.
+    // Without auto-fix, this rule then becomes meaningless.
+    "eslint/capitalized-comments": "off",
+    // Ignore `null` to compatible with `== null` check, which is widely used in JavaScript ecosystem to check for both `null` and `undefined`.
+    "eslint/eqeqeq": ["error", "smart", { "null": "ignore" }],
+    // We use `antfu/top-level-function` with `ESLint` instead.
+    "eslint/func-style": "off",
+    // Meaningless.
+    "eslint/id-length": "off",
+    "eslint/init-declarations": "off",
+    // Too strict.
+    "eslint/max-classes-per-file": "off",
+    "eslint/max-lines": "off",
+    "eslint/max-lines-per-function": "off",
+    "eslint/max-params": "off",
+    "eslint/max-statements": "off",
+    "eslint/new-cap": "off",
+    // Does not compatible with `for await...of` loop.
+    "eslint/no-await-in-loop": "off",
+    // I think `continue` is more readable than nested `if` statement.
+    "eslint/no-continue": "off",
+    // If the auto-fix is implemented, this rule may be more powerful!
+    "eslint/no-duplicate-imports": ["error", { "allowSeparateTypeImports": true }],
+    // `== null` check is widely used in JavaScript ecosystem to check for both `null` and `undefined`.
+    "eslint/no-eq-null": "off",
+    // Too strict.
+    "eslint/no-magic-numbers": "off",
+    "eslint/no-undefined": "off",
+    "eslint/no-plusplus": "off",
+    "eslint/no-ternary": "off",
+    // We only use this rule for JavaScript files.
+    "eslint/no-undef": "off",
+    // Warn TODO, FIXME, and XXX comments, notice maintainers to deal with them.
+    "eslint/no-warning-comments": ["warn"],
+    // Too strict.
+    "eslint/radix": "off",
+    // This rule is inferior to the accuracy of the type-aware `typescript/require-await` rule. If using type-aware rules, always prefer that rule over this one.
+    "eslint/require-await": "off",
+    // This does not respect comments as separators, so we don't use it.
+    "eslint/sort-keys": "off",
+    // We use standlone plugin with more powerful features instead.
+    "eslint/sort-imports": "off"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.{,c,m}js"],
+      "rules": {
+        // We only enable this rule for JavaScript files.
+        "eslint/no-undef": "error"
+      }
+    }
+  ]
+}

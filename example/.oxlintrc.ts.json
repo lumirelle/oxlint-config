@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "extends": ["@lumirelle/oxlint-config/ts"],
+  // Must specify the environment, custom as your need.
+  "env": {
+    "node": true
+  }
+}

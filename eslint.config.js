@@ -5,6 +5,9 @@ import oxlint from 'eslint-plugin-oxlint'
 export default antfu(
   {
     type: 'lib',
+    ignores: [
+      'test/fixture/**',
+    ],
   },
   ...oxlint.buildFromOxlintConfigFile('.oxlintrc.json'),
 ).override('antfu/perfectionist/setup', {

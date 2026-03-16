@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "extends": ["@lumirelle/oxlint-config/vue"],
+  // Must specify the environment, custom as your need.
+  "env": {
+    "node": true,
+    "browser": true
+  }
+}

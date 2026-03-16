@@ -1,0 +1,19 @@
+{
+  "$schema": "../node_modules/oxlint/configuration_schema.json",
+  "plugins": ["unicorn"],
+  "categories": {
+    "correctness": "error",
+    "nursery": "error",
+    "pedantic": "error",
+    "perf": "error",
+    "restriction": "error",
+    "style": "error",
+    "suspicious": "error"
+  },
+  "rules": {
+    // kebab-case for common case; snake_case for special case: combine multi-word for quick selection.
+    "unicorn/filename-case": ["error", { "cases": { "kebabCase": true, "camelCase": false, "snakeCase": true, "pascalCase": false } }],
+    // In my opinion, `null` is intended to use in some cases.
+    "unicorn/no-null": "off"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../node_modules/oxlint/configuration_schema.json",
+  "plugins": ["vue"],
+  "categories": {
+    "correctness": "error",
+    "nursery": "error",
+    "pedantic": "error",
+    "perf": "error",
+    "restriction": "error",
+    "style": "error",
+    "suspicious": "error"
+  },
+  "rules": {
+    // Missing support for 'only-when-assigned' option.
+    // See https://github.com/oxc-project/oxc/issues/19458.
+    "vue/define-props-destructuring": "off",
+    // Too strict.
+    "vue/max-props": "off"
+  }
+}

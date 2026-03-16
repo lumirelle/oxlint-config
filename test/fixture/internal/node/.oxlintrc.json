@@ -1,0 +1,7 @@
+{
+  "$schema": "../../../../node_modules/oxlint/configuration_schema.json",
+  "extends": ["../../../../internal/.oxlintrc.node.json"],
+  "env": {
+    "node": true
+  }
+}
