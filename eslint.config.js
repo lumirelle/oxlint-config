@@ -7,6 +7,7 @@ export default antfu(
     type: 'lib',
     ignores: [
       'test/fixture/**',
+      'test/exports/**',
     ],
   },
   ...oxlint.buildFromOxlintConfigFile('.oxlintrc.json'),

@@ -1,0 +1,8 @@
+./ts: 
+  $schema: string
+  default: object
+  extends: object
+./vue: 
+  $schema: string
+  default: object
+  extends: object
