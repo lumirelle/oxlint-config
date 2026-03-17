@@ -5,7 +5,7 @@
     "./internal/rules/javascript.json",
     "./internal/rules/oxc.json",
     "./internal/rules/unicorn.json",
-    "./internal/rules/import.json",
+    "./internal/rules/imports.json",
     "./internal/rules/promise.json",
     "./internal/rules/node.json",
     "./internal/rules/jsdoc.json",

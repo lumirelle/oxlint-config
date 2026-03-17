@@ -62,6 +62,10 @@ const schema: SchemaItem[] = [
       for (const key in rules) {
         if (key.startsWith('antfu'))
           delete rules[key]
+        else if (key === 'import/consistent-type-specifier-style')
+          // Plugin `eslint-plugin-import-lite` rename `prefer-top-level` to `top-level`,
+          // see https://github.com/9romise/eslint-plugin-import-lite/blob/main/src/rules/consistent-type-specifier-style/README.md
+          rules[key] = ['error', 'prefer-top-level']
       }
       return {
         plugins: ['import'],
