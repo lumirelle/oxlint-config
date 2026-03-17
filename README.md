@@ -9,6 +9,40 @@
 
 Lumirelle's opinionated OxLint config for JavaScript / TypeScript / Vue projects.
 
+## Configuration
+
+There are now only JSON (static) configs, with two presets for TypeScript and Vue projects:
+
+- `@lumirelle/oxlint-config/ts`: For JavaScript / TypeScript projects, it uses plugins below:
+  1. `eslint`:
+
+     Used by [JavaScript rules](internal/rules/javascript.json). These rules are generated based on [@antfu/eslint-config's JavaScript rules](https://github.com/antfu/eslint-config/blob/main/src/configs/javascript.ts) with default options.
+
+  3. `oxc`:
+
+     Used by [Oxc rules](internal/rules/oxc.json). These rules are configured [in this package](src/rules/oxc.ts).
+
+  5. `unicorn`:
+
+     Used by [Unicorn rules](internal/rules/unicorn.json). These rules are generated based on [@antfu/eslint-config's Unicorn rules](https://github.com/antfu/eslint-config/blob/main/src/configs/unicorn.ts) with default options.
+
+  6. `import`:
+
+     Used by [Imports (Don't forget the "s") rules](internal/rules/imports.json). These rules are generated based on [@antfu/eslint-config's Imports rules](https://github.com/antfu/eslint-config/blob/main/src/configs/imports.ts) with default options.
+
+     Because of the differences between plugin implementations (OxLint's built-in `import` plugin are compatible with [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import), but `@antfu/eslint-config` uses [eslint-plugin-import-lite](https://github.com/9romise/eslint-plugin-import-lite)), there are [some transformations when generating rules](src/schema.ts#L65).
+
+  7. `promise`: Used by [Promise rules](internal/rules/promise.json). These rules are configured [in this package](src/rules/promise.ts).
+  8.  `node`: Used by [Node rules](internal/rules/node.json). These rules are generated based on [@antfu/eslint-config's Node rules](https://github.com/antfu/eslint-config/blob/main/src/configs/node.ts) with default options.
+  9.  `jsdoc`: Used by [JSDoc rules](internal/rules/jsdoc.json). These rules are generated based on [@antfu/eslint-config's JSDoc rules](https://github.com/antfu/eslint-config/blob/main/src/configs/jsdoc.ts) with default options.
+  10. `typescript`: Used by [TypeScript rules](internal/rules/typescript.json). These rules are generated based on [@antfu/eslint-config's TypeScript rules](https://github.com/antfu/eslint-config/blob/main/src/configs/typescript.ts) with default options.
+
+- `@lumirelle/oxlint-config/vue`: For Vue projects, it extends the `ts` preset, uses the additional `vue` plugin, and adds [rules for Vue files](internal/rules/vue.json), which are generated based on [@antfu/eslint-config's Vue rules](https://github.com/antfu/eslint-config/blob/main/src/configs/vue.ts) with default options.
+
+> [!Note]
+>
+> In the future, we may support dynamic configs (e.g. JavaScript / TypeScript configs) to allow more flexible configurations, to align with the behavior of `@antfu/eslint-config`...
+
 ## Usage
 
 1. Install the package with OxLint:
@@ -30,9 +64,16 @@ For TypeScript projects:
 ```json
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "extends": ["@lumirelle/oxlint-config/ts"],
-  // Must specify the environment, custom as your need.
+  // What a pity that OxLint doesn't support scope packages in "extends" field now, so we have to use the full path to the config file.
+  // See https://github.com/oxc-project/oxc/issues/15538
+  // "extends": ["@lumirelle/oxlint-config/ts"],
+  "extends": ["./node_modules/@lumirelle/oxlint-config/.oxlintrc.ts.json"],
+  // Must specify the environment by youself, because "extends" does not apply to "env".
+  // Custom as your need.
   "env": {
+    "builtin": true,
+    "es2026": true,
+    "browser": true,
     "node": true
   }
 }
@@ -43,11 +84,17 @@ For Vue projects:
 ```json
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "extends": ["@lumirelle/oxlint-config/vue"],
-  // Must specify the environment, custom as your need.
+  // What a pity that OxLint doesn't support scope packages in "extends" field now, so we have to use the full path to the config file.
+  // See https://github.com/oxc-project/oxc/issues/15538
+  // "extends": ["@lumirelle/oxlint-config/vue"],
+  "extends": ["./node_modules/@lumirelle/oxlint-config/.oxlintrc.vue.json"],
+  // Must specify the environment by youself, because "extends" does not apply to "env".
+  // Custom as your need.
   "env": {
-    "node": true,
-    "browser": true
+    "builtin": true,
+    "es2026": true,
+    "browser": true,
+    "node": true
   }
 }
 ```
