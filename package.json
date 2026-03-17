@@ -57,13 +57,17 @@
   },
   "scripts": {
     "prepare": "simple-git-hooks",
+    "dev": "bunx @oxlint/migrate ./fixture/eslint.config.js --output-file .oxlintrc.generated.json",
+    "build": "bun run ./scripts/generate-config.ts",
+    "start": "bun run lint",
     "lint": "bun run --parallel 'oxlint -c .oxlintrc.json --type-aware --type-check' eslint",
     "lint:fix": "oxlint -c .oxlintrc.json --type-aware --type-check --fix && eslint --fix",
     "unused": "knip",
     "pubcheck": "bun run --parallel 'attw --pack --profile esm-only' publint",
-    "check": "bun run --parallel lint unused pubcheck",
+    "gitcheck": "bun run ./scripts/check-git-status.sh",
+    "check": "bun run --parallel lint unused pubcheck gitcheck",
     "test": "bun test",
-    "prerelease": "bun run --parallel check test",
+    "prerelease": "bun run build && bun run --parallel check test",
     "release": "bumpp"
   },
   "devDependencies": {
