@@ -1,9 +1,15 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "extends": ["@lumirelle/oxlint-config/vue"],
-  // Must specify the environment, custom as your need.
+  // What a pity that OxLint doesn't support scope packages in "extends" field now, so we have to use the full path to the config file.
+  // See https://github.com/oxc-project/oxc/issues/15538
+  // "extends": ["@lumirelle/oxlint-config/vue"],
+  "extends": ["./node_modules/@lumirelle/oxlint-config/.oxlintrc.vue.json"],
+  // Must specify the environment by youself, because "extends" does not apply to "env".
+  // Custom as your need.
   "env": {
-    "node": true,
-    "browser": true
+    "builtin": true,
+    "es2026": true,
+    "browser": true,
+    "node": true
   }
 }
