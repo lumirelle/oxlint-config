@@ -13,7 +13,7 @@ Lumirelle's opinionated OxLint config for JavaScript / TypeScript / Vue projects
 
 There are now only JSON (static) configs, with two presets for TypeScript and Vue projects:
 
-- `@lumirelle/oxlint-config/ts`: For JavaScript / TypeScript projects, it uses plugins below:
+- [`@lumirelle/oxlint-config/ts`](.oxlintrc.ts.json): For JavaScript / TypeScript projects, it uses plugins below:
   1. `eslint`:
 
      Used by [JavaScript rules](internal/rules/javascript.json). These rules are generated based on [@antfu/eslint-config's JavaScript rules](https://github.com/antfu/eslint-config/blob/main/src/configs/javascript.ts) with default options.
@@ -37,7 +37,7 @@ There are now only JSON (static) configs, with two presets for TypeScript and Vu
   9.  `jsdoc`: Used by [JSDoc rules](internal/rules/jsdoc.json). These rules are generated based on [@antfu/eslint-config's JSDoc rules](https://github.com/antfu/eslint-config/blob/main/src/configs/jsdoc.ts) with default options.
   10. `typescript`: Used by [TypeScript rules](internal/rules/typescript.json). These rules are generated based on [@antfu/eslint-config's TypeScript rules](https://github.com/antfu/eslint-config/blob/main/src/configs/typescript.ts) with default options.
 
-- `@lumirelle/oxlint-config/vue`: For Vue projects, it extends the `ts` preset, uses the additional `vue` plugin, and adds [rules for Vue files](internal/rules/vue.json), which are generated based on [@antfu/eslint-config's Vue rules](https://github.com/antfu/eslint-config/blob/main/src/configs/vue.ts) with default options.
+- [`@lumirelle/oxlint-config/vue`](.oxlintrc.vue.json): For Vue projects, it extends the `ts` preset, uses the additional `vue` plugin, and adds [rules for Vue files](internal/rules/vue.json), which are generated based on [@antfu/eslint-config's Vue rules](https://github.com/antfu/eslint-config/blob/main/src/configs/vue.ts) with default options.
 
 > [!Note]
 >
