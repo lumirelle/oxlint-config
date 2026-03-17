@@ -27,6 +27,12 @@ if (maybeString) {
   console.log(maybeString);
 }
 
+
+declare const maybeBool: boolean | undefined;
+if (maybeBool) {
+  console.log(maybeBool);
+}
+
 declare const maybeObject: { foo: string } | null;
 if (maybeObject) {
   console.log(maybeObject.foo);

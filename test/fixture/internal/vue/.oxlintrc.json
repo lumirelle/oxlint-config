@@ -1,6 +1,6 @@
 {
   "$schema": "../../../../node_modules/oxlint/configuration_schema.json",
-  "extends": ["../../../../internal/.oxlintrc.vue.json"],
+  "extends": ["../../../../internal/rules/vue.json"],
   "env": {
     "node": true,
     "browser": true

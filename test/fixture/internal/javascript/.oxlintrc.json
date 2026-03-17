@@ -1,6 +1,6 @@
 {
   "$schema": "../../../../node_modules/oxlint/configuration_schema.json",
-  "extends": ["../../../../internal/rules/node.json"],
+  "extends": ["../../../../internal/rules/javascript.json"],
   "env": {
     "builtin": true,
     "es2026": true,

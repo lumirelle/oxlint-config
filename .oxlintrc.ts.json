@@ -1,13 +1,14 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "extends": [
-    "./internal/.oxlintrc.eslint.json",
-    "./internal/.oxlintrc.oxc.json",
-    "./internal/.oxlintrc.unicorn.json",
-    "./internal/.oxlintrc.import.json",
-    "./internal/.oxlintrc.promise.json",
-    "./internal/.oxlintrc.node.json",
-    "./internal/.oxlintrc.jsdoc.json",
-    "./internal/.oxlintrc.typescript.json"
+    "./internal/defaults/ignores.json",
+    "./internal/rules/javascript.json",
+    "./internal/rules/oxc.json",
+    "./internal/rules/unicorn.json",
+    "./internal/rules/import.json",
+    "./internal/rules/promise.json",
+    "./internal/rules/node.json",
+    "./internal/rules/jsdoc.json",
+    "./internal/rules/typescript.json"
   ]
 }

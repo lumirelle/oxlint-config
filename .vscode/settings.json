@@ -2,8 +2,8 @@
   // Code Quality
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll.oxc": "never",
-    "source.fixAll.eslint": "never",
+    "source.fixAll.oxc": "always",
+    "source.fixAll.eslint": "always",
     "source.organizeImports": "never"
   },
   "oxc.typeAware": true,

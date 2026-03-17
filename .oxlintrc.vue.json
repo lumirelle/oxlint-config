@@ -2,6 +2,6 @@
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "extends": [
     "./.oxlintrc.ts.json",
-    "./internal/.oxlintrc.vue.json"
+    "./internal/rules/vue.json"
   ]
 }
