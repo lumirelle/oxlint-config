@@ -167,9 +167,8 @@
         "vue/no-v-html": "off",
         "vue/order-in-components": "warn",
         "vue/this-in-template": "warn",
-        "antfu/no-top-level-await": "off",
         "node/prefer-global/process": "off",
-        "ts/explicit-function-return-type": "off",
+        "typescript/explicit-function-return-type": "off",
         "vue/component-name-in-template-casing": [
           "error",
           "PascalCase"

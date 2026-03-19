@@ -1,12 +1,24 @@
-import { vue as _vue } from '@antfu/eslint-config'
+import type { OxlintConfig } from 'oxlint'
+import { vue as _vue, renamePluginInConfigs } from '@antfu/eslint-config'
 import { getConfig } from '../utils'
 
-export async function vue(): Promise<any> {
-  const configItems = await _vue()
-  const globalsConfig = getConfig(configItems, 'antfu/vue/setup')
-  const rulesConfig = getConfig(configItems, 'antfu/vue/rules')
+export async function vue(): Promise<OxlintConfig> {
+  const configItems = renamePluginInConfigs(await _vue(), { ts: 'typescript' })
+  const globals: any = getConfig(configItems, 'antfu/vue/setup').languageOptions?.globals
+  const rules: any = getConfig(configItems, 'antfu/vue/rules').rules
+  for (const key in rules) {
+    if (key.startsWith('antfu'))
+      delete rules[key]
+  }
   return {
-    globals: globalsConfig.languageOptions?.globals,
-    rules: rulesConfig.rules,
+    plugins: [],
+    overrides: [
+      {
+        files: ['**/*.vue'],
+        plugins: ['vue'],
+        globals,
+        rules,
+      },
+    ],
   }
 }
