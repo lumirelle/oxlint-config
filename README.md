@@ -7,136 +7,238 @@
 [![Codecov][codecov-src]][codecov-href]
 [![License][license-src]][license-href]
 
-Lumirelle's opinionated OxLint config for JavaScript / TypeScript / Vue projects.
+Lumirelle's opinionated _OxLint_ config for _JavaScript_ / _TypeScript_ / _Vue_ projects, generated based on [@antfu/eslint-config](https://github.com/antfu/eslint-config).
 
 ## Configuration
 
-There are now only JSON (static) configs, with two presets for TypeScript and Vue projects:
-
-- [`@lumirelle/oxlint-config/ts`](.oxlintrc.ts.json): For JavaScript / TypeScript projects, it uses plugins below:
-  1. `eslint`:
-
-     Used by [JavaScript rules](internal/rules/javascript.json). These rules are generated based on [@antfu/eslint-config's JavaScript rules](https://github.com/antfu/eslint-config/blob/main/src/configs/javascript.ts) with default options.
-
-  3. `oxc`:
-
-     Used by [Oxc rules](internal/rules/oxc.json). These rules are configured [in this package](src/rules/oxc.ts).
-
-  5. `unicorn`:
-
-     Used by [Unicorn rules](internal/rules/unicorn.json). These rules are generated based on [@antfu/eslint-config's Unicorn rules](https://github.com/antfu/eslint-config/blob/main/src/configs/unicorn.ts) with default options.
-
-  6. `import`:
-
-     Used by [Imports (Don't forget the "s") rules](internal/rules/imports.json). These rules are generated based on [@antfu/eslint-config's Imports rules](https://github.com/antfu/eslint-config/blob/main/src/configs/imports.ts) with default options.
-
-     Because of the differences between plugin implementations (OxLint's built-in `import` plugin are compatible with [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import), but `@antfu/eslint-config` uses [eslint-plugin-import-lite](https://github.com/9romise/eslint-plugin-import-lite)), there are [some transformations when generating rules](src/rules/imports.ts#L12).
-
-  7. `promise`: Used by [Promise rules](internal/rules/promise.json). These rules are configured [in this package](src/rules/promise.ts).
-  8.  `node`: Used by [Node rules](internal/rules/node.json). These rules are generated based on [@antfu/eslint-config's Node rules](https://github.com/antfu/eslint-config/blob/main/src/configs/node.ts) with default options.
-  9.  `jsdoc`: Used by [JSDoc rules](internal/rules/jsdoc.json). These rules are generated based on [@antfu/eslint-config's JSDoc rules](https://github.com/antfu/eslint-config/blob/main/src/configs/jsdoc.ts) with default options.
-  10. `typescript`: Used by [TypeScript rules](internal/rules/typescript.json). These rules are generated based on [@antfu/eslint-config's TypeScript rules](https://github.com/antfu/eslint-config/blob/main/src/configs/typescript.ts) with default options.
-
-- [`@lumirelle/oxlint-config/vue`](.oxlintrc.vue.json): For Vue projects, it extends the `ts` preset, uses the additional `vue` plugin, and adds [rules for Vue files](internal/rules/vue.json), which are generated based on [@antfu/eslint-config's Vue rules](https://github.com/antfu/eslint-config/blob/main/src/configs/vue.ts) with default options.
+There are now only JSON (static) configs, one for JavaScript / TypeScript projects and one for Vue projects.
 
 > [!Note]
 >
-> In the future, we may support dynamic configs (e.g. JavaScript / TypeScript configs) to allow more flexible configurations, to align with the behavior of `@antfu/eslint-config`...
+> In the future, we may support dynamic configs (e.g. JavaScript / TypeScript configs) to allow more flexible configurations, in order to migrate from _ESLint_ + `@antfu/eslint-config` to _OxLint_ + `@lumirelle/oxlint-config` more smoothly.
+
+### [`@lumirelle/oxlint-config/ts`](.oxlintrc.ts.json)
+
+For JavaScript / TypeScript projects, it uses plugins below:
+
+<table><tbody>
+
+<tr><th valign="top">
+
+Plugins
+
+</th><th valign="top">
+
+Description
+
+</th></tr>
+
+<tr><td valign="top">
+
+`eslint`
+
+</td><td valign="top">
+
+Used by [JavaScript rules](internal/rules/javascript.json). These rules are generated based on [@antfu/eslint-config's JavaScript rules](https://github.com/antfu/eslint-config/blob/main/src/configs/javascript.ts) with default options.
+
+</td></tr>
+
+<tr><td valign="top">
+
+`oxc`
+
+</td><td valign="top">
+
+Used by [Oxc rules](internal/rules/oxc.json). These rules are configured [in this package](src/rules/oxc.ts).
+
+</td></tr>
+
+<tr><td valign="top">
+
+`unicorn`
+
+</td><td valign="top">
+
+Used by [Unicorn rules](internal/rules/unicorn.json). These rules are generated based on [@antfu/eslint-config's Unicorn rules](https://github.com/antfu/eslint-config/blob/main/src/configs/unicorn.ts) with default options.
+
+</td></tr>
+
+<tr><td valign="top">
+
+`import`
+
+</td><td valign="top">
+
+Used by [Imports (Don't forget the "s") rules](internal/rules/imports.json). These rules are generated based on [@antfu/eslint-config's Imports rules](https://github.com/antfu/eslint-config/blob/main/src/configs/imports.ts) with default options.
+
+Because of the differences between plugin implementations (OxLint's built-in `import` plugin are compatible with [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import), but `@antfu/eslint-config` uses [eslint-plugin-import-lite](https://github.com/9romise/eslint-plugin-import-lite)), there are [some transformations when generating rules](src/rules/imports.ts#L12).
+
+</td></tr>
+
+<tr><td valign="top">
+
+`promise`
+
+</td><td valign="top">
+
+Used by [Promise rules](internal/rules/promise.json). These rules are configured [in this package](src/rules/promise.ts).
+
+</td></tr>
+
+<tr><td valign="top">
+
+`node`
+
+</td><td valign="top">
+
+Used by [Node rules](internal/rules/node.json). These rules are generated based on [@antfu/eslint-config's Node rules](https://github.com/antfu/eslint-config/blob/main/src/configs/node.ts) with default options.
+
+</td></tr>
+
+<tr><td valign="top">
+
+`jsdoc`
+
+</td><td valign="top">
+
+Used by [JSDoc rules](internal/rules/jsdoc.json). These rules are generated based on [@antfu/eslint-config's JSDoc rules](https://github.com/antfu/eslint-config/blob/main/src/configs/jsdoc.ts) with default options.
+
+</td></tr>
+
+<tr><td valign="top">
+
+`typescript`
+
+</td><td valign="top">
+
+Used by [TypeScript rules](internal/rules/typescript.json). These rules are generated based on [@antfu/eslint-config's TypeScript rules](https://github.com/antfu/eslint-config/blob/main/src/configs/typescript.ts) with default options.
+
+</td></tr>
+
+</tbody></table>
+
+### [`@lumirelle/oxlint-config/vue`](.oxlintrc.vue.json)
+
+For Vue projects, it extends the `@lumirelle/oxlint-config/ts` preset, uses the additional `vue` plugin.
+
+<table><tbody>
+
+<tr><th valign="top">
+
+Plugin
+
+</th><th valign="top">
+
+Description
+
+</th></tr>
+
+<tr><td valign="top">
+
+`vue`
+
+</td><td valign="top">
+
+Used by [Vue rules](internal/rules/vue.json), which are generated based on [@antfu/eslint-config's Vue rules](https://github.com/antfu/eslint-config/blob/main/src/configs/vue.ts) with default options.
+
+</td></tr>
+
+</tbody></table>
 
 ## Usage
 
-1. Install the package with OxLint:
+1. Install the package with OxLint, `oxlint-tsgolint` is required for type-aware rules:
 
-```bash
-# @antfu/ni
-ni -D @lumirelle/oxlint-config oxlint oxlint-tsgolint
-# Bun
-bun add -d @lumirelle/oxlint-config oxlint oxlint-tsgolint
-# NPM
-npm install -D @lumirelle/oxlint-config oxlint oxlint-tsgolint
-# ...
-```
+   ```bash
+   # @antfu/ni
+   ni -D @lumirelle/oxlint-config oxlint oxlint-tsgolint
+   # Bun
+   bun add -d @lumirelle/oxlint-config oxlint oxlint-tsgolint
+   # NPM
+   npm install -D @lumirelle/oxlint-config oxlint oxlint-tsgolint
+   # ...
+   ```
 
 2. Extend the config in your `.oxlintrc`:
 
-For TypeScript projects:
+   For TypeScript projects:
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  // What a pity that OxLint doesn't support scope packages in "extends" field now, so we have to use the full path to the config file.
-  // See https://github.com/oxc-project/oxc/issues/15538
-  // "extends": ["@lumirelle/oxlint-config/ts"],
-  "extends": ["./node_modules/@lumirelle/oxlint-config/.oxlintrc.ts.json"],
-  // Enable type-aware rules.
-  "options": {
-    "typeAware": true
-  },
-  // Must specify the environment by youself, because "extends" does not apply to "env".
-  // Custom as your need.
-  "env": {
-    "builtin": true,
-    "es2026": true,
-    "browser": true,
-    "node": true
-  }
-}
-```
+   ```json
+   {
+     "$schema": "./node_modules/oxlint/configuration_schema.json",
+     // What a pity that OxLint doesn't support scope packages in "extends" field now, so we have to use the full path to the config file.
+     // See https://github.com/oxc-project/oxc/issues/15538
+     // "extends": ["@lumirelle/oxlint-config/ts"],
+     "extends": ["./node_modules/@lumirelle/oxlint-config/.oxlintrc.   ts.json"],
+     // Enable type-aware rules.
+     "options": {
+       "typeAware": true
+     },
+     // Must specify the environment by youself, because "extends" does not apply to "env".
+     // Custom as your need.
+     "env": {
+       "builtin": true,
+       "es2026": true,
+       "browser": true,
+       "node": true
+     }
+   }
+   ```
 
-For Vue projects:
+   For vue projects:
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  // What a pity that OxLint doesn't support scope packages in "extends" field now, so we have to use the full path to the config file.
-  // See https://github.com/oxc-project/oxc/issues/15538
-  // "extends": ["@lumirelle/oxlint-config/vue"],
-  "extends": ["./node_modules/@lumirelle/oxlint-config/.oxlintrc.vue.json"],
-  // Enable type-aware rules.
-  "options": {
-    "typeAware": true
-  },
-  // Must specify the environment by youself, because "extends" does not apply to "env".
-  // Custom as your need.
-  "env": {
-    "builtin": true,
-    "es2026": true,
-    "browser": true,
-    "node": true
-  }
-}
-```
+   ```json
+   {
+     "$schema": "./node_modules/oxlint/configuration_schema.json",
+     // what a pity that oxlint doesn't support scope packages in "extends" field now, so we have to use the full path to the config file.
+     // see https://github.com/oxc-project/oxc/issues/15538
+     // "extends": ["@lumirelle/oxlint-config/vue"],
+     "extends": ["./node_modules/@lumirelle/oxlint-config/.oxlintrc.vue.json"],
+     // enable type-aware rules.
+     "options": {
+       "typeaware": true
+     },
+     // must specify the environment by youself, because "extends" does not apply to "env".
+     // custom as your need.
+     "env": {
+       "builtin": true,
+       "es2026": true,
+       "browser": true,
+       "node": true
+     }
+   }
+   ```
 
-3. Run OxLint CLI:
+3. Run oxlint cli:
 
-```bash
-# With bunx
-bunx oxlint --type-aware --type-check
-# With npx
-npx oxlint --type-aware --type-check
-# ...
-```
+   ```bash
+   # with bunx
+   bunx oxlint --type-aware --type-check
+   # with npx
+   npx oxlint --type-aware --type-check
+   # ...
+   ```
 
 4. (Optional) Add lint scripts to `package.json`:
 
-```json
-{
-  "scripts": {
-    "lint": "oxlint",
-    "lint:fix": "oxlint --fix"
-  }
-}
-```
+   ```json
+   {
+     "scripts": {
+       "lint": "oxlint",
+       "lint:fix": "oxlint --fix"
+     }
+   }
+   ```
 
-And run them with:
+   And run them with:
 
-```bash
-# With bun
-bun run lint
-# With npm
-npm run lint
-# ...
-```
+   ```bash
+   # with bun
+   bun run lint
+   # with npm
+   npm run lint
+   # ...
+   ```
 
 ## Work with ESLint
 
