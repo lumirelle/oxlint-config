@@ -30,7 +30,7 @@ There are now only JSON (static) configs, with two presets for TypeScript and Vu
 
      Used by [Imports (Don't forget the "s") rules](internal/rules/imports.json). These rules are generated based on [@antfu/eslint-config's Imports rules](https://github.com/antfu/eslint-config/blob/main/src/configs/imports.ts) with default options.
 
-     Because of the differences between plugin implementations (OxLint's built-in `import` plugin are compatible with [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import), but `@antfu/eslint-config` uses [eslint-plugin-import-lite](https://github.com/9romise/eslint-plugin-import-lite)), there are [some transformations when generating rules](src/schema.ts#L65).
+     Because of the differences between plugin implementations (OxLint's built-in `import` plugin are compatible with [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import), but `@antfu/eslint-config` uses [eslint-plugin-import-lite](https://github.com/9romise/eslint-plugin-import-lite)), there are [some transformations when generating rules](src/rules/imports.ts#L12).
 
   7. `promise`: Used by [Promise rules](internal/rules/promise.json). These rules are configured [in this package](src/rules/promise.ts).
   8.  `node`: Used by [Node rules](internal/rules/node.json). These rules are generated based on [@antfu/eslint-config's Node rules](https://github.com/antfu/eslint-config/blob/main/src/configs/node.ts) with default options.
@@ -68,6 +68,10 @@ For TypeScript projects:
   // See https://github.com/oxc-project/oxc/issues/15538
   // "extends": ["@lumirelle/oxlint-config/ts"],
   "extends": ["./node_modules/@lumirelle/oxlint-config/.oxlintrc.ts.json"],
+  // Enable type-aware rules.
+  "options": {
+    "typeAware": true
+  },
   // Must specify the environment by youself, because "extends" does not apply to "env".
   // Custom as your need.
   "env": {
@@ -88,6 +92,10 @@ For Vue projects:
   // See https://github.com/oxc-project/oxc/issues/15538
   // "extends": ["@lumirelle/oxlint-config/vue"],
   "extends": ["./node_modules/@lumirelle/oxlint-config/.oxlintrc.vue.json"],
+  // Enable type-aware rules.
+  "options": {
+    "typeAware": true
+  },
   // Must specify the environment by youself, because "extends" does not apply to "env".
   // Custom as your need.
   "env": {
@@ -114,8 +122,8 @@ npx oxlint --type-aware --type-check
 ```json
 {
   "scripts": {
-    "lint": "oxlint --type-aware --type-check",
-    "lint:fix": "oxlint --type-aware --type-check --fix"
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix"
   }
 }
 ```

@@ -1,6 +1,9 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "extends": ["./.oxlintrc.ts.json"],
+  "options": {
+    "typeAware": true
+  },
   "ignorePatterns": [
     "test/fixture/**",
     "test/exports/**"

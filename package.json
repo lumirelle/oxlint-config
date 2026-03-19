@@ -60,9 +60,9 @@
     "dev": "bunx @oxlint/migrate ./fixture/eslint.config.js --output-file .oxlintrc.generated.json",
     "build": "bun run ./scripts/generate-config.ts",
     "start": "bun run lint",
-    "lint": "bun run --parallel 'oxlint -c .oxlintrc.json --type-aware --type-check' eslint",
-    "lint:fix": "oxlint -c .oxlintrc.json --type-aware --type-check --fix && eslint --fix",
-    "unused": "knip",
+    "lint": "bun run --parallel 'oxlint -c .oxlintrc.json' eslint",
+    "lint:fix": "oxlint -c .oxlintrc.json --fix && eslint --fix",
+    "unused": "knip-bun",
     "pubcheck": "bun run --parallel 'attw --pack --profile esm-only' publint",
     "gitcheck": "bun run ./scripts/check-git-status.sh",
     "check": "bun run --parallel lint unused pubcheck gitcheck",
@@ -93,7 +93,7 @@
   },
   "nano-staged": {
     "*": [
-      "oxlint -c .oxlintrc.json --type-aware --type-check",
+      "oxlint -c .oxlintrc.json",
       "eslint"
     ]
   }
