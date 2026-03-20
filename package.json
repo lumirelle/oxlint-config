@@ -76,6 +76,7 @@
     "@antfu/eslint-config": "catalog:base",
     "@arethetypeswrong/cli": "catalog:check",
     "@lumirelle/oxlint-config": "file:.",
+    "@lumirelle/tsconfig": "^0.0.1",
     "@types/bun": "catalog:types",
     "bumpp": "catalog:dev",
     "eslint": "catalog:check",

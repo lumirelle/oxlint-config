@@ -8,6 +8,7 @@
         "@antfu/eslint-config": "catalog:base",
         "@arethetypeswrong/cli": "catalog:check",
         "@lumirelle/oxlint-config": "file:.",
+        "@lumirelle/tsconfig": "^0.0.1",
         "@types/bun": "catalog:types",
         "bumpp": "catalog:dev",
         "eslint": "catalog:check",
@@ -123,6 +124,8 @@
     "@loaderkit/resolve": ["@loaderkit/resolve@1.0.4", "", { "dependencies": { "@braidai/lang": "^1.0.0" } }, "sha512-rJzYKVcV4dxJv+vW6jlvagF8zvGxHJ2+HTr1e2qOejfmGhAApgJHl8Aog4mMszxceTRiKTTbnpgmTO1bEZHV/A=="],
 
     "@lumirelle/oxlint-config": ["pkg-placeholder@root:", {}],
+
+    "@lumirelle/tsconfig": ["@lumirelle/tsconfig@0.0.1", "", {}, "sha512-gpWOwuYrg3+ON2zZMcGspmIrverj1Wyn3tnv4OxHk6vDAmxMCGRITPrrMdq4cGuQQNpq5VyyoCzj/3vEcJOVgg=="],
 
     "@napi-rs/wasm-runtime": ["@napi-rs/wasm-runtime@1.1.1", "", { "dependencies": { "@emnapi/core": "^1.7.1", "@emnapi/runtime": "^1.7.1", "@tybys/wasm-util": "^0.10.1" } }, "sha512-p64ah1M1ld8xjWv3qbvFwHiFVWrq1yFvV4f7w+mzaqiR4IlSgkqhcRdHwsGgomwzBH51sRY4NEowLxnaBjcW/A=="],
 
