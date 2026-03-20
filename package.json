@@ -31,6 +31,7 @@
         "@antfu/eslint-config": "^7.7.3"
       },
       "dev": {
+        "@lumirelle/tsconfig": "^0.0.1",
         "bumpp": "^11.0.1",
         "simple-git-hooks": "git+https://github.com/toplenboren/simple-git-hooks.git#7625657",
         "typescript": "^5.9.3",
@@ -76,7 +77,7 @@
     "@antfu/eslint-config": "catalog:base",
     "@arethetypeswrong/cli": "catalog:check",
     "@lumirelle/oxlint-config": "file:.",
-    "@lumirelle/tsconfig": "^0.0.1",
+    "@lumirelle/tsconfig": "catalog:dev",
     "@types/bun": "catalog:types",
     "bumpp": "catalog:dev",
     "eslint": "catalog:check",
