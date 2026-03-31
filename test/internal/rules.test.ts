@@ -69,7 +69,6 @@ describe('javascript rules', () => {
           "no-control-regex": "error",
           "no-debugger": "error",
           "no-delete-var": "error",
-          "no-dupe-args": "error",
           "no-dupe-class-members": "error",
           "no-dupe-keys": "error",
           "no-duplicate-case": "error",
@@ -110,8 +109,6 @@ describe('javascript rules', () => {
           "no-new-native-nonconstructor": "error",
           "no-new-wrappers": "error",
           "no-obj-calls": "error",
-          "no-octal": "error",
-          "no-octal-escape": "error",
           "no-proto": "error",
           "no-prototype-builtins": "error",
           "no-redeclare": [
@@ -132,34 +129,6 @@ describe('javascript rules', () => {
               "name": "self",
             },
           ],
-          "no-restricted-properties": [
-            "error",
-            {
-              "message": "Use \`Object.getPrototypeOf\` or \`Object.setPrototypeOf\` instead.",
-              "property": "__proto__",
-            },
-            {
-              "message": "Use \`Object.defineProperty\` instead.",
-              "property": "__defineGetter__",
-            },
-            {
-              "message": "Use \`Object.defineProperty\` instead.",
-              "property": "__defineSetter__",
-            },
-            {
-              "message": "Use \`Object.getOwnPropertyDescriptor\` instead.",
-              "property": "__lookupGetter__",
-            },
-            {
-              "message": "Use \`Object.getOwnPropertyDescriptor\` instead.",
-              "property": "__lookupSetter__",
-            },
-          ],
-          "no-restricted-syntax": [
-            "error",
-            "TSEnumDeclaration[const=true]",
-            "TSExportAssignment",
-          ],
           "no-self-assign": [
             "error",
             {
@@ -174,7 +143,6 @@ describe('javascript rules', () => {
           "no-this-before-super": "error",
           "no-throw-literal": "error",
           "no-undef": "error",
-          "no-undef-init": "error",
           "no-unexpected-multiline": "error",
           "no-unmodified-loop-condition": "error",
           "no-unneeded-ternary": [
@@ -184,7 +152,6 @@ describe('javascript rules', () => {
             },
           ],
           "no-unreachable": "error",
-          "no-unreachable-loop": "error",
           "no-unsafe-finally": "error",
           "no-unsafe-negation": "error",
           "no-unused-expressions": [
@@ -221,27 +188,6 @@ describe('javascript rules', () => {
           "no-useless-return": "error",
           "no-var": "error",
           "no-with": "error",
-          "object-shorthand": [
-            "error",
-            "always",
-            {
-              "avoidQuotes": true,
-              "ignoreConstructors": false,
-            },
-          ],
-          "one-var": [
-            "error",
-            {
-              "initialized": "never",
-            },
-          ],
-          "prefer-arrow-callback": [
-            "error",
-            {
-              "allowNamedFunctions": false,
-              "allowUnboundThis": true,
-            },
-          ],
           "prefer-const": [
             "error",
             {
@@ -251,12 +197,6 @@ describe('javascript rules', () => {
           ],
           "prefer-exponentiation-operator": "error",
           "prefer-promise-reject-errors": "error",
-          "prefer-regex-literals": [
-            "error",
-            {
-              "disallowRedundantWrapping": true,
-            },
-          ],
           "prefer-rest-params": "error",
           "prefer-spread": "error",
           "prefer-template": "error",
