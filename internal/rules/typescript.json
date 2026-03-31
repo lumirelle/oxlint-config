@@ -15,13 +15,11 @@
         "getter-return": "off",
         "no-class-assign": "off",
         "no-const-assign": "off",
-        "no-dupe-args": "off",
         "no-dupe-class-members": "off",
         "no-dupe-keys": "off",
         "no-func-assign": "off",
         "no-import-assign": "off",
         "no-new-native-nonconstructor": "off",
-        "no-new-symbol": "off",
         "no-obj-calls": "off",
         "no-redeclare": "off",
         "no-setter-return": "off",
@@ -95,10 +93,6 @@
             "fixStyle": "separate-type-imports",
             "prefer": "type-imports"
           }
-        ],
-        "typescript/method-signature-style": [
-          "error",
-          "property"
         ],
         "typescript/no-dupe-class-members": "error",
         "typescript/no-import-type-side-effects": "error",
