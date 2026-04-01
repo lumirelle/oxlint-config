@@ -5,5 +5,5 @@ export default {
   /// keep-sorted
   ignoreDependencies: ['@arethetypeswrong/cli', 'publint', 'vue', thisPkg],
   /// keep-sorted
-  ignoreFiles: ['fixture/**', 'test/fixture/**'],
+  ignoreFiles: ['fixtures/**', 'test/fixtures/**'],
 } satisfies KnipConfig

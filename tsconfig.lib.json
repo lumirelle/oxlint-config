@@ -10,5 +10,5 @@
   },
   // Only include your project's source files who are expected to run with `isolatedDeclarations`, also test files who are related to source files.
   "include": ["src/**/*", "test/**/*"],
-  "exclude": ["test/fixture/**/*"]
+  "exclude": ["test/fixtures/**/*"]
 }

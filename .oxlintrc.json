@@ -5,7 +5,7 @@
     "typeAware": true
   },
   "ignorePatterns": [
-    "test/fixture/**",
+    "test/fixtures/**",
     "test/exports/**"
   ]
 }
