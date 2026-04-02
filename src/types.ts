@@ -16,7 +16,6 @@ interface SchemaItem {
 }
 
 export type {
-  Category,
   NameOrIndex,
   SchemaItem,
 }
