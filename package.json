@@ -44,7 +44,7 @@
         "@arethetypeswrong/cli": "^0.18.2",
         "eslint": "^10.1.0",
         "eslint-plugin-oxlint": "^1.58.0",
-        "knip": "^6.1.1",
+        "knip": "^6.2.0",
         "nano-staged": "^0.9.0",
         "oxlint": "^1.58.0",
         "oxlint-tsgolint": "0.17.0",
