@@ -1,0 +1,16 @@
+{
+  "plugins": [],
+  "overrides": [
+    {
+      "files": [
+        "**/*.{,c}js"
+      ],
+      "plugins": [
+        "typescript"
+      ],
+      "rules": {
+        "typescript/no-require-imports": "off"
+      }
+    }
+  ]
+}

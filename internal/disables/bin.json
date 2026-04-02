@@ -1,0 +1,12 @@
+{
+  "plugins": [],
+  "overrides": [
+    {
+      "files": [
+        "**/bin/**/*",
+        "**/bin.{,c,m}[jt]s{,x}"
+      ],
+      "rules": {}
+    }
+  ]
+}

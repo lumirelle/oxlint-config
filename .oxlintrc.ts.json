@@ -9,6 +9,12 @@
     "./internal/rules/promise.json",
     "./internal/rules/node.json",
     "./internal/rules/jsdoc.json",
-    "./internal/rules/typescript.json"
+    "./internal/rules/typescript.json",
+    "./internal/disables/scripts.json",
+    "./internal/disables/cli.json",
+    "./internal/disables/bin.json",
+    "./internal/disables/dts.json",
+    "./internal/disables/cjs.json",
+    "./internal/disables/config-files.json"
   ]
 }

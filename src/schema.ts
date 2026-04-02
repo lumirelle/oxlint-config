@@ -1,5 +1,11 @@
 import type { SchemaItem } from './types'
 import { ignores } from './defaults/ignores'
+import { bin } from './disables/bin'
+import { cjs } from './disables/cjs'
+import { cli } from './disables/cli'
+import { configFiles } from './disables/config-files'
+import { dts } from './disables/dts'
+import { scripts } from './disables/scripts'
 import { imports } from './rules/imports'
 import { javascript } from './rules/javascript'
 import { jsdoc } from './rules/jsdoc'
@@ -65,5 +71,37 @@ export const schema: SchemaItem[] = [
     name: 'vue',
     category: 'rules',
     fn: vue,
+  },
+
+  // Disables
+  {
+    name: 'scripts',
+    category: 'disables',
+    fn: scripts,
+  },
+  {
+    name: 'cli',
+    category: 'disables',
+    fn: cli,
+  },
+  {
+    name: 'bin',
+    category: 'disables',
+    fn: bin,
+  },
+  {
+    name: 'dts',
+    category: 'disables',
+    fn: dts,
+  },
+  {
+    name: 'cjs',
+    category: 'disables',
+    fn: cjs,
+  },
+  {
+    name: 'config-files',
+    category: 'disables',
+    fn: configFiles,
   },
 ]

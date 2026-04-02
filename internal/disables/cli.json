@@ -1,0 +1,14 @@
+{
+  "plugins": [],
+  "overrides": [
+    {
+      "files": [
+        "**/cli/**/*.{,c,m}[jt]s{,x}",
+        "**/cli.{,c,m}[jt]s{,x}"
+      ],
+      "rules": {
+        "no-console": "off"
+      }
+    }
+  ]
+}

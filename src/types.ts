@@ -6,9 +6,10 @@ type FlatConfigComposer = ReturnType<typeof antfu>
 
 type NameOrIndex = Parameters<FlatConfigComposer['override']>[0]
 
-type Category = 'defaults' | 'rules'
+type Category = 'defaults' | 'rules' | 'disables'
 
 interface SchemaItem {
+  /** The subfolder of the generated configuration file under `internal/` */
   category: Category
   name: string
   fn: () => Awaitable<OxlintConfig>

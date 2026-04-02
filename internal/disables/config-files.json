@@ -1,0 +1,18 @@
+{
+  "plugins": [],
+  "overrides": [
+    {
+      "files": [
+        "**/*.config.{,c,m}[jt]s{,x}",
+        "**/*.config.*.{,c,m}[jt]s{,x}"
+      ],
+      "plugins": [
+        "typescript"
+      ],
+      "rules": {
+        "no-console": "off",
+        "typescript/explicit-function-return-type": "off"
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "plugins": [],
+  "overrides": [
+    {
+      "files": [
+        "**/*.d.{,c,m}ts"
+      ],
+      "rules": {}
+    }
+  ]
+}
