@@ -79,6 +79,14 @@
     "oxlint": "catalog:baseline",
     "oxlint-tsgolint": "catalog:baseline"
   },
+  "peerDependenciesMeta": {
+    "@antfu/eslint-config": {
+      "optional": true
+    },
+    "oxlint-tsgolint": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:baseline",
     "@arethetypeswrong/cli": "catalog:check",
