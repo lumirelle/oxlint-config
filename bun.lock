@@ -5,9 +5,8 @@
     "": {
       "name": "pkg-placeholder",
       "devDependencies": {
-        "@antfu/eslint-config": "catalog:base",
+        "@antfu/eslint-config": "catalog:baseline",
         "@arethetypeswrong/cli": "catalog:check",
-        "@lumirelle/oxlint-config": "file:.",
         "@lumirelle/tsconfig": "catalog:dev",
         "@types/bun": "catalog:types",
         "bumpp": "catalog:dev",
@@ -15,13 +14,18 @@
         "eslint-plugin-oxlint": "catalog:check",
         "knip": "catalog:check",
         "nano-staged": "catalog:check",
-        "oxlint": "catalog:check",
-        "oxlint-tsgolint": "catalog:check",
+        "oxlint": "catalog:baseline",
+        "oxlint-tsgolint": "catalog:baseline",
         "publint": "catalog:check",
         "simple-git-hooks": "catalog:dev",
         "typescript": "catalog:dev",
         "vitest-package-exports": "catalog:test",
         "vue": "catalog:dev",
+      },
+      "peerDependencies": {
+        "@antfu/eslint-config": "catalog:baseline",
+        "oxlint": "catalog:baseline",
+        "oxlint-tsgolint": "catalog:baseline",
       },
     },
   },
@@ -29,8 +33,10 @@
     "typescript": "catalog:dev",
   },
   "catalogs": {
-    "base": {
+    "baseline": {
       "@antfu/eslint-config": "^8.0.0",
+      "oxlint": "^1.58.0",
+      "oxlint-tsgolint": "^0.19.0",
     },
     "check": {
       "@arethetypeswrong/cli": "^0.18.2",
@@ -38,8 +44,6 @@
       "eslint-plugin-oxlint": "^1.58.0",
       "knip": "^6.3.0",
       "nano-staged": "^0.9.0",
-      "oxlint": "^1.58.0",
-      "oxlint-tsgolint": "^0.19.0",
       "publint": "^0.3.18",
     },
     "dev": {
@@ -126,8 +130,6 @@
     "@jridgewell/sourcemap-codec": ["@jridgewell/sourcemap-codec@1.5.5", "", {}, "sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og=="],
 
     "@loaderkit/resolve": ["@loaderkit/resolve@1.0.4", "", { "dependencies": { "@braidai/lang": "^1.0.0" } }, "sha512-rJzYKVcV4dxJv+vW6jlvagF8zvGxHJ2+HTr1e2qOejfmGhAApgJHl8Aog4mMszxceTRiKTTbnpgmTO1bEZHV/A=="],
-
-    "@lumirelle/oxlint-config": ["pkg-placeholder@root:", {}],
 
     "@lumirelle/tsconfig": ["@lumirelle/tsconfig@0.1.2", "", { "peerDependencies": { "typescript": ">= 6.0.0" } }, "sha512-1sTTnDVIpaEO0RNHzwT/f1SjRRWaO7RrNIhzT7tAR58S+s60y4Ju5Td5ftocP9RgH+cQyGYK4ut8CcJQN0/BIQ=="],
 

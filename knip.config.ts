@@ -1,9 +1,8 @@
 import type { KnipConfig } from 'knip'
-import { name as thisPkg } from './package.json'
 
 export default {
   /// keep-sorted
-  ignoreDependencies: ['@arethetypeswrong/cli', 'publint', 'vue', thisPkg],
+  ignoreDependencies: ['@arethetypeswrong/cli', 'publint', 'vue'],
   /// keep-sorted
   ignoreFiles: ['fixtures/**', 'test/fixtures/**'],
 } satisfies KnipConfig
