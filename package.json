@@ -60,7 +60,7 @@
   },
   "scripts": {
     "prepare": "simple-git-hooks",
-    "dev": "bunx @oxlint/migrate ./fixtures/eslint.config.js --output-file .oxlintrc.generated.json",
+    "dev": "bunx @oxlint/migrate ./fixtures/eslint.config.js --output-file .oxlintrc.generated.json --with-nursery",
     "build": "bun run ./scripts/generate-config.ts",
     "start": "bun run lint",
     "lint": "bun run --parallel 'oxlint --config .oxlintrc.json' eslint",
