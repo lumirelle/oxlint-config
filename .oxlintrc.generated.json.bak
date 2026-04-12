@@ -245,6 +245,7 @@
     "no-template-curly-in-string": "error",
     "no-this-before-super": "error",
     "no-throw-literal": "error",
+    "no-undef": "error",
     "no-unexpected-multiline": "error",
     "no-unmodified-loop-condition": "error",
     "no-unneeded-ternary": [
@@ -253,6 +254,7 @@
         "defaultAssignment": false
       }
     ],
+    "no-unreachable": "error",
     "no-unsafe-finally": "error",
     "no-unsafe-negation": "error",
     "no-unused-expressions": [
@@ -882,6 +884,7 @@
       ],
       "rules": {
         "constructor-super": "off",
+        "getter-return": "off",
         "no-class-assign": "off",
         "no-const-assign": "off",
         "no-dupe-keys": "off",
@@ -897,6 +900,8 @@
         ],
         "no-setter-return": "off",
         "no-this-before-super": "off",
+        "no-undef": "off",
+        "no-unreachable": "off",
         "no-unsafe-negation": "off",
         "no-with": "off",
         "prefer-const": [
@@ -1488,6 +1493,7 @@
         "no-console": "off",
         "no-labels": "off",
         "no-lone-blocks": "off",
+        "no-undef": "off",
         "no-unused-expressions": "off",
         "no-unused-labels": "off",
         "no-unused-vars": "off",
