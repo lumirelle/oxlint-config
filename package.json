@@ -28,8 +28,8 @@
     "packages": [],
     "catalogs": {
       "baseline": {
-        "@antfu/eslint-config": "^8.1.1",
-        "oxlint": "^1.59.0",
+        "@antfu/eslint-config": "^8.2.0",
+        "oxlint": "^1.60.0",
         "oxlint-tsgolint": "^0.20.0"
       },
       "dev": {
@@ -46,12 +46,9 @@
         "@arethetypeswrong/cli": "^0.18.2",
         "eslint": "^10.2.0",
         "eslint-plugin-oxlint": "^1.59.0",
-        "knip": "^6.4.0",
+        "knip": "^6.4.1",
         "nano-staged": "^1.0.2",
         "publint": "^0.3.18"
-      },
-      "test": {
-        "vitest-package-exports": "^1.2.0"
       }
     }
   },
@@ -75,9 +72,9 @@
     "release": "bumpp"
   },
   "peerDependencies": {
-    "@antfu/eslint-config": "catalog:baseline",
-    "oxlint": "catalog:baseline",
-    "oxlint-tsgolint": "catalog:baseline"
+    "@antfu/eslint-config": ">=8.0.0",
+    "oxlint": ">=1.0.0",
+    "oxlint-tsgolint": ">=0.20.0"
   },
   "peerDependenciesMeta": {
     "@antfu/eslint-config": {
@@ -102,7 +99,6 @@
     "publint": "catalog:check",
     "simple-git-hooks": "catalog:dev",
     "typescript": "catalog:dev",
-    "vitest-package-exports": "catalog:test",
     "vue": "catalog:dev"
   },
   "overrides": {
@@ -113,7 +109,7 @@
   },
   "nano-staged": {
     "*": [
-      "oxlint --config .oxlintrc.json",
+      "oxlint --config .oxlintrc.json --no-error-on-unmatched-pattern",
       "eslint"
     ]
   }
