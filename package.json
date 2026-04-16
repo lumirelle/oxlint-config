@@ -30,7 +30,7 @@
       "baseline": {
         "@antfu/eslint-config": "^8.2.0",
         "oxlint": "^1.60.0",
-        "oxlint-tsgolint": "^0.20.0"
+        "oxlint-tsgolint": "^0.21.0"
       },
       "dev": {
         "@lumirelle/tsconfig": "^0.1.2",
@@ -45,7 +45,7 @@
       "check": {
         "@arethetypeswrong/cli": "^0.18.2",
         "eslint": "^10.2.0",
-        "eslint-plugin-oxlint": "^1.59.0",
+        "eslint-plugin-oxlint": "^1.60.0",
         "knip": "^6.4.1",
         "nano-staged": "^1.0.2",
         "publint": "^0.3.18"
