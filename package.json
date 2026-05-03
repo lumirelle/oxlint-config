@@ -45,9 +45,9 @@
       },
       "check": {
         "@arethetypeswrong/cli": "^0.18.2",
-        "eslint": "^10.2.1",
+        "eslint": "^10.3.0",
         "eslint-plugin-oxlint": "^1.62.0",
-        "knip": "^6.7.0",
+        "knip": "^6.11.0",
         "nano-staged": "^1.0.2",
         "publint": "^0.3.18"
       }
