@@ -236,6 +236,29 @@
         "name": "self"
       }
     ],
+    "no-restricted-properties": [
+      "error",
+      {
+        "message": "Use `Object.getPrototypeOf` or `Object.setPrototypeOf` instead.",
+        "property": "__proto__"
+      },
+      {
+        "message": "Use `Object.defineProperty` instead.",
+        "property": "__defineGetter__"
+      },
+      {
+        "message": "Use `Object.defineProperty` instead.",
+        "property": "__defineSetter__"
+      },
+      {
+        "message": "Use `Object.getOwnPropertyDescriptor` instead.",
+        "property": "__lookupGetter__"
+      },
+      {
+        "message": "Use `Object.getOwnPropertyDescriptor` instead.",
+        "property": "__lookupSetter__"
+      }
+    ],
     "no-self-assign": [
       "error",
       {
@@ -1030,10 +1053,16 @@
       ],
       "rules": {
         "vue/no-arrow-functions-in-watch": "error",
+        "vue/no-deprecated-data-object-declaration": "error",
+        "vue/no-deprecated-delete-set": "error",
         "vue/no-deprecated-destroyed-lifecycle": "error",
+        "vue/no-deprecated-events-api": "error",
+        "vue/no-deprecated-model-definition": "error",
+        "vue/no-deprecated-vue-config-keycodes": "error",
         "vue/no-export-in-script-setup": "error",
         "vue/no-lifecycle-after-await": "error",
         "vue/prefer-import-from-vue": "error",
+        "vue/return-in-computed-property": "error",
         "vue/valid-define-emits": "error",
         "vue/valid-define-props": "error",
         "vue/no-multiple-slot-args": "warn",

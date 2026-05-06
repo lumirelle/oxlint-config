@@ -29,7 +29,7 @@
     "catalogs": {
       "baseline": {
         "@antfu/eslint-config": "^8.2.0",
-        "oxlint": "^1.62.0",
+        "oxlint": "^1.63.0",
         "oxlint-tsgolint": "^0.22.1"
       },
       "dev": {
@@ -37,7 +37,7 @@
         "bumpp": "^11.0.1",
         "simple-git-hooks": "git+https://github.com/toplenboren/simple-git-hooks.git#7625657",
         "typescript": "^6.0.3",
-        "vue": "^3.5.33"
+        "vue": "^3.5.34"
       },
       "types": {
         "@types/node": "^25.6.0",
@@ -46,10 +46,10 @@
       "check": {
         "@arethetypeswrong/cli": "^0.18.2",
         "eslint": "^10.3.0",
-        "eslint-plugin-oxlint": "^1.62.0",
+        "eslint-plugin-oxlint": "^1.63.0",
         "knip": "^6.11.0",
         "nano-staged": "^1.0.2",
-        "publint": "^0.3.18"
+        "publint": "^0.3.19"
       }
     }
   },
@@ -74,11 +74,15 @@
   },
   "peerDependencies": {
     "@antfu/eslint-config": ">=8.0.0",
-    "oxlint": ">=1.0.0",
-    "oxlint-tsgolint": ">=0.20.0"
+    "eslint-plugin-oxlint": ">=1.63.0",
+    "oxlint": ">=1.63.0",
+    "oxlint-tsgolint": ">=0.22.0"
   },
   "peerDependenciesMeta": {
     "@antfu/eslint-config": {
+      "optional": true
+    },
+    "eslint-plugin-oxlint": {
       "optional": true
     },
     "oxlint-tsgolint": {
