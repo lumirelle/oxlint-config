@@ -128,7 +128,8 @@
     "**/.context",
     "**/.claude",
     "**/.agents",
-    "**/.*/skills"
+    "**/.*/skills",
+    "**/*.md"
   ],
   "rules": {
     "accessor-pairs": [
@@ -334,6 +335,12 @@
     ],
     "prefer-exponentiation-operator": "error",
     "prefer-promise-reject-errors": "error",
+    "prefer-regex-literals": [
+      "error",
+      {
+        "disallowRedundantWrapping": true
+      }
+    ],
     "prefer-rest-params": "error",
     "prefer-spread": "error",
     "prefer-template": "error",
@@ -1493,22 +1500,10 @@
         "markdown/no-space-in-emphasis": "error",
         "markdown/no-unused-definitions": "error",
         "markdown/require-alt-text": "error",
-        "markdown/table-column-count": "error",
-        "command/command": "off",
-        "no-irregular-whitespace": "off",
-        "perfectionist/sort-exports": "off",
-        "regexp/no-legacy-features": "off",
-        "regexp/no-missing-g-flag": "off",
-        "regexp/no-useless-dollar-replacements": "off",
-        "regexp/no-useless-flag": "off",
-        "@stylistic/indent": "off"
+        "markdown/table-column-count": "error"
       },
       "jsPlugins": [
-        "@eslint/eslint-plugin-markdown",
-        "eslint-plugin-command",
-        "eslint-plugin-perfectionist",
-        "eslint-plugin-regexp",
-        "@stylistic/eslint-plugin"
+        "@eslint/eslint-plugin-markdown"
       ]
     },
     {
