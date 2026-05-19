@@ -24,8 +24,8 @@
       },
       "peerDependencies": {
         "@antfu/eslint-config": ">=9.0.0",
-        "eslint-plugin-oxlint": ">=1.64.0",
-        "oxlint": ">=1.64.0",
+        "eslint-plugin-oxlint": ">=1.65.0",
+        "oxlint": ">=1.65.0",
         "oxlint-tsgolint": ">=0.22.0",
       },
       "optionalPeers": [
