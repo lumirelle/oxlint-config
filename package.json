@@ -111,7 +111,8 @@
     "vue": "catalog:dev"
   },
   "overrides": {
-    "typescript": "$typescript"
+    "fflate": "0.8.2",
+    "typescript": "catalog:types"
   },
   "simple-git-hooks": {
     "pre-commit": "bunx nano-staged"
