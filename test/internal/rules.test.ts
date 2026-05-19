@@ -211,6 +211,13 @@ describe('javascript rules', () => {
           "no-useless-return": "error",
           "no-var": "error",
           "no-with": "error",
+          "prefer-arrow-callback": [
+            "error",
+            {
+              "allowNamedFunctions": false,
+              "allowUnboundThis": true,
+            },
+          ],
           "prefer-const": [
             "error",
             {
