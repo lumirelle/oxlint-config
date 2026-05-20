@@ -16,10 +16,6 @@ export async function imports(): Promise<OxlintConfig> {
       // Plugin `eslint-plugin-import-lite` rename `prefer-top-level` to `top-level`,
       // see https://github.com/9romise/eslint-plugin-import-lite/blob/main/src/rules/consistent-type-specifier-style/README.md
       rules[key] = ['error', 'prefer-top-level']
-    else if (key === 'import/newline-after-import')
-      // Currently does not supported by oxlint, see
-      // https://github.com/oxc-project/oxc/issues/1117
-      delete rules[key]
   }
   return {
     plugins: ['import'],

@@ -198,6 +198,7 @@
     "no-fallthrough": "error",
     "no-func-assign": "error",
     "no-global-assign": "error",
+    "no-implied-eval": "error",
     "no-import-assign": "error",
     "no-irregular-whitespace": "error",
     "no-iterator": "error",
@@ -422,6 +423,12 @@
     "import/no-duplicates": "error",
     "import/no-mutable-exports": "error",
     "import/no-named-default": "error",
+    "import/newline-after-import": [
+      "error",
+      {
+        "count": 1
+      }
+    ],
     "e18e/prefer-array-fill": "error",
     "e18e/prefer-includes": "error",
     "e18e/prefer-nullish-coalescing": "error",
