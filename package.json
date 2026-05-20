@@ -72,7 +72,7 @@
     "check": "bun run --parallel lint typecheck unused pubcheck gitcheck",
     "pretest": "bun run build",
     "test": "bun test",
-    "prerelease": "bun run --parallel check test",
+    "prerelease": "bun run build && bun run --parallel lint typecheck unused pubcheck gitcheck 'bun test'",
     "release": "bumpp"
   },
   "peerDependencies": {
