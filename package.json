@@ -49,8 +49,7 @@
         "eslint-plugin-oxlint": "^1.68.0",
         "knip": "^6.15.0",
         "nano-staged": "^1.0.2",
-        "publint": "^0.3.21",
-        "simple-git-hooks": "git+https://github.com/toplenboren/simple-git-hooks.git#7625657"
+        "publint": "^0.3.21"
       }
     }
   },
@@ -91,16 +90,11 @@
     "oxlint": "catalog:baseline",
     "oxlint-tsgolint": "catalog:baseline",
     "publint": "catalog:check",
-    "simple-git-hooks": "catalog:check",
     "typescript": "catalog:types",
     "vue": "catalog:dev"
   },
   "overrides": {
-    "fflate": "0.8.2",
     "typescript": "catalog:types"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "bunx nano-staged"
   },
   "nano-staged": {
     "*": [
