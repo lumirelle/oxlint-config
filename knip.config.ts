@@ -1,6 +1,7 @@
 import type { KnipConfig } from 'knip'
 
 export default {
-  ignoreDependencies: ['@arethetypeswrong/cli', 'publint', 'vue'],
-  ignoreFiles: ['fixtures/**', 'test/fixtures/**'],
+  entry: ['{src,test,fixtures,scripts}/**/*.{ts,js,vue}'],
+  ignoreBinaries: ['mise'],
+  ignoreDependencies: ['@arethetypeswrong/cli', 'publint', 'bumpp'],
 } satisfies KnipConfig
