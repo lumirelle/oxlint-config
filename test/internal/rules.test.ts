@@ -506,6 +506,10 @@ describe('typescript rules', () => {
                   "prefer": "type-imports",
                 },
               ],
+              "typescript/method-signature-style": [
+                "error",
+                "property",
+              ],
               "typescript/no-array-constructor": "error",
               "typescript/no-dupe-class-members": "error",
               "typescript/no-duplicate-enum-values": "error",
