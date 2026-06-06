@@ -57,7 +57,15 @@ run = { tasks = [
 
 [tasks.gitcheck]
 depends = "build"
-run = "bun run ./scripts/check-git-status.sh"
+run = """
+#!/bin/bash
+if [[ -z "$(git status --porcelain)" ]]; then
+  echo "✅ Git repo is clean."
+else
+  echo "🔴 Git repo is dirty. Aborting."
+  exit 1
+fi
+"""
 
 [tasks.check]
 run = { tasks = [
