@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'bun:test'
+import { describe, expect, it } from 'vitest'
 import ignores from '../../internal/defaults/ignores.json'
 
 describe('ignores', () => {

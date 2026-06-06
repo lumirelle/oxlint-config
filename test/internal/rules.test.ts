@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'bun:test'
+import { describe, expect, it } from 'vitest'
 import imports from '../../internal/rules/imports.json'
 import javascript from '../../internal/rules/javascript.json'
 import jsdoc from '../../internal/rules/jsdoc.json'

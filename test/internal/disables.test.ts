@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'bun:test'
+import { describe, expect, it } from 'vitest'
 import bin from '../../internal/disables/bin.json'
 import cjs from '../../internal/disables/cjs.json'
 import cli from '../../internal/disables/cli.json'
