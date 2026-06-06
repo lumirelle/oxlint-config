@@ -80,6 +80,9 @@ run = { tasks = [
 depends = "build"
 run = "aubr test"
 
+[tasks."test:watch"]
+run = "aubr test:watch"
+
 [tasks.prerelease]
 run = { tasks = [
   "check",

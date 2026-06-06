@@ -74,8 +74,8 @@
     "unused": "knip-bun",
     "attw": "attw --pack --profile esm-only",
     "publint": "publint",
-    "test:watch": "vitest",
     "test": "vitest run",
+    "test:watch": "vitest",
     "release": "bumpp"
   },
   "peerDependencies": {
