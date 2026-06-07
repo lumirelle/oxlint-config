@@ -33,7 +33,6 @@
     "packages": [],
     "catalogs": {
       "dev": {
-        "bumpp": "^11.1.0",
         "vue": "^3.5.35"
       },
       "types": {
@@ -48,12 +47,9 @@
         "oxlint-tsgolint": "^0.23.0"
       },
       "check": {
-        "@arethetypeswrong/cli": "^0.18.3",
         "eslint": "^10.4.1",
         "eslint-plugin-oxlint": "^1.68.0",
-        "knip": "^6.16.0",
-        "nano-staged": "^1.0.2",
-        "publint": "^0.3.21"
+        "knip": "^6.16.1"
       },
       "test": {
         "@vitest/coverage-v8": "^4.1.8",
@@ -63,20 +59,6 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "scripts": {
-    "prepare": "mise run prepare",
-    "dev": "bunx @oxlint/migrate ./fixtures/eslint.config.js --output-file .oxlintrc.generated.json --with-nursery",
-    "build": "bun run ./scripts/generate-config.ts",
-    "oxlint": "oxlint --config .oxlintrc.json",
-    "eslint": "eslint",
-    "typecheck": "tsc --build --noEmit",
-    "unused": "knip-bun",
-    "attw": "attw --pack --profile esm-only",
-    "publint": "publint",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "release": "bumpp"
   },
   "peerDependencies": {
     "@antfu/eslint-config": ">=9.0.0",
@@ -97,30 +79,20 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:baseline",
-    "@arethetypeswrong/cli": "catalog:check",
     "@lumirelle/tsconfig": "catalog:types",
     "@types/bun": "catalog:types",
     "@types/node": "catalog:types",
     "@vitest/coverage-v8": "catalog:test",
-    "bumpp": "catalog:dev",
     "eslint": "catalog:check",
     "eslint-plugin-oxlint": "catalog:check",
     "knip": "catalog:check",
-    "nano-staged": "catalog:check",
     "oxlint": "catalog:baseline",
     "oxlint-tsgolint": "catalog:baseline",
-    "publint": "catalog:check",
     "typescript": "catalog:types",
     "vitest": "catalog:test",
     "vue": "catalog:dev"
   },
   "overrides": {
     "typescript": "catalog:types"
-  },
-  "nano-staged": {
-    "*": [
-      "oxlint --config .oxlintrc.json --no-error-on-unmatched-pattern",
-      "eslint"
-    ]
   }
 }
