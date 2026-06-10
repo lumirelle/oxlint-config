@@ -3,7 +3,7 @@ _.path = [ "./node_modules/.bin" ]
 
 [tools]
 bun = "latest"
-aube = "latest"
+"github:jdx/aube" = "latest"
 pkl = "latest"
 hk = "latest"
 "npm:@arethetypeswrong/cli" = "latest"
