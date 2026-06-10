@@ -3,6 +3,7 @@ _.path = [ "./node_modules/.bin" ]
 
 [tools]
 bun = "latest"
+npm = "latest" # Used to release package (trust publisher)
 "github:jdx/aube" = "latest"
 pkl = "latest"
 hk = "latest"
