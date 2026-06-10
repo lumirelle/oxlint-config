@@ -60,7 +60,7 @@ run = "aubx bumpp"
 raw = true
 
 [tasks.publish]
-run = "aube publish --access public --tag latest"
+run = "bun pm pack --filename release.tgz && npm publish ./release.tgz --access public --tag latest"
 
 [tasks."publish:commit"]
 run = "aubx pkg-pr-new publish --bun"
