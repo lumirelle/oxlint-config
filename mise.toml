@@ -14,6 +14,7 @@ hk = "latest"
 # Release
 "npm:pkg-pr-new" = "latest"
 "npm:bumpp" = "latest"
+"npm:changelogithub" = "latest"
 
 [deps.bun-aube]
 description = "Automatically install dependencies via aube & bun's lockfile."
@@ -59,6 +60,9 @@ run = { tasks = [
 depends = "prerelease"
 run = "bumpp"
 raw = true
+
+[tasks.changelog]
+run = "changelogithub"
 
 [tasks.publish]
 run = [
