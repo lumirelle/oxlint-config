@@ -82,6 +82,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "catalog:baseline",
     "@lumirelle/tsconfig": "catalog:types",
+    "@oxlint/migrate": "catalog:baseline",
     "@types/bun": "catalog:types",
     "@types/node": "catalog:types",
     "@vitest/coverage-v8": "catalog:test",
