@@ -1,7 +1,7 @@
 {
   "name": "@lumirelle/oxlint-config",
   "type": "module",
-  "version": "0.8.2",
+  "version": "0.9.0",
   "packageManager": "aube@1.21.0",
   "description": "Lumirelle's opinionated OXLint config",
   "author": "Lumirelle <shabbyacc@outlook.com>",
