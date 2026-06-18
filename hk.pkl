@@ -3,7 +3,10 @@ import "package://github.com/jdx/hk/releases/download/v1.48.0/hk@1.48.0#/Builtin
 
 local linters = new Mapping<String, Step> {
   // JS & TS & ...
-  ["oxlint"] = Builtins.ox_lint
+  ["oxlint"] = (Builtins.ox_lint) {
+    check = "oxlint --config .oxlintrc.json --deny-warnings {{ files }}"
+    fix = "oxlint --config .oxlintrc.json --deny-warnings --fix {{ files }}"
+  }
   ["eslint"] = (Builtins.eslint) {
     batch = false
     glob =
