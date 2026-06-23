@@ -147,100 +147,107 @@ Used by [Vue rules](internal/rules/vue.json), which are generated based on [@ant
 
 ## Usage
 
-1. Install the package with OxLint, `oxlint-tsgolint` is required for type-aware rules:
+1. Install the package with OxLint, and `oxlint-tsgolint` is required for type-aware rules:
 
-   ```bash
-   # @antfu/ni
-   ni -D @lumirelle/oxlint-config oxlint oxlint-tsgolint
-   # Bun
-   bun add -d @lumirelle/oxlint-config oxlint oxlint-tsgolint
-   # NPM
-   npm install -D @lumirelle/oxlint-config oxlint oxlint-tsgolint
-   # ...
-   ```
+    ```bash
+    # aube, https://aube.en.dev/
+    aube add -D @lumirelle/oxlint-config oxlint oxlint-tsgolint
+    # PNPM
+    pnpm add -d @lumirelle/oxlint-config oxlint oxlint-tsgolint
+    # NPM
+    npm install -D @lumirelle/oxlint-config oxlint oxlint-tsgolint
+    # ...
+    ```
 
 2. Extend the config in your `.oxlintrc`:
 
-   For TypeScript projects:
+    For TypeScript projects:
 
-   ```json
-   {
-     "$schema": "./node_modules/oxlint/configuration_schema.json",
-     // What a pity that OxLint doesn't support scope packages in "extends" field now, so we have to use the full path to the config file.
-     // See https://github.com/oxc-project/oxc/issues/15538
-     // "extends": ["@lumirelle/oxlint-config/ts"],
-     "extends": ["./node_modules/@lumirelle/oxlint-config/.oxlintrc.   ts.json"],
-     // Enable type-aware rules.
-     "options": {
-       "typeAware": true
-     },
-     // Must specify the environment by youself, because "extends" does not apply to "env".
-     // Custom as your need.
-     "env": {
-       "builtin": true,
-       "es2026": true,
-       "browser": true,
-       "node": true
-     }
-   }
-   ```
+    ```json
+    {
+      "$schema": "./node_modules/oxlint/configuration_schema.json",
+      // What a pity that OxLint doesn't support scope packages in "extends" field now, so we have to use the full path to the config file.
+      // See https://github.com/oxc-project/oxc/issues/15538
+      // "extends": ["@lumirelle/oxlint-config/ts"],
+      "extends": ["./node_modules/@lumirelle/oxlint-config/.oxlintrc.ts.json"],
+      // Enable type-aware rules.
+      "options": {
+        "typeAware": true,
+        // If you want to integrate type checking (`tsc --noEmit`) into your linting process
+        "typeCheck": true
+      },
+      // Must specify the environment by youself, because "extends" does not apply to "env".
+      // Custom as your need.
+      "env": {
+        "builtin": true,
+        "es2026": true,
+        "browser": true,
+        "node": true
+      }
+    }
+    ```
 
-   For vue projects:
+    For Vue projects:
 
-   ```json
-   {
-     "$schema": "./node_modules/oxlint/configuration_schema.json",
-     // what a pity that oxlint doesn't support scope packages in "extends" field now, so we have to use the full path to the config file.
-     // see https://github.com/oxc-project/oxc/issues/15538
-     // "extends": ["@lumirelle/oxlint-config/vue"],
-     "extends": ["./node_modules/@lumirelle/oxlint-config/.oxlintrc.vue.json"],
-     // enable type-aware rules.
-     "options": {
-       "typeaware": true
-     },
-     // must specify the environment by youself, because "extends" does not apply to "env".
-     // custom as your need.
-     "env": {
-       "builtin": true,
-       "es2026": true,
-       "browser": true,
-       "node": true
-     }
-   }
-   ```
+    ```json
+    {
+      "$schema": "./node_modules/oxlint/configuration_schema.json",
+      // What a pity that oxlint doesn't support scope packages in "extends" field now, so we have to use the full path to the config file.
+      // See https://github.com/oxc-project/oxc/issues/15538
+      // "extends": ["@lumirelle/oxlint-config/vue"],
+      "extends": ["./node_modules/@lumirelle/oxlint-config/.oxlintrc.vue.json"],
+      // Enable type-aware rules.
+      "options": {
+        "typeAware": true
+        // Vue projects needs `vue-tsc --noEmit` for type checking, so it's not supported by `typeCheck` option now.
+      },
+      // Must specify the environment by youself, because "extends" does not apply to "env".
+      // Custom as your need.
+      "env": {
+        "builtin": true,
+        "es2026": true,
+        "browser": true,
+        "node": true
+      }
+    }
+    ```
 
 3. Run oxlint cli:
 
-   ```bash
-   # with bunx
-   bunx oxlint --type-aware --type-check
-   # with npx
-   npx oxlint --type-aware --type-check
-   # ...
-   ```
+    ```bash
+    # With aube
+    aube exec oxlint --type-aware --type-check
+    # With PNPM
+    pnpm exec oxlint --type-aware --type-check
+    # With NPM
+    npm exec oxlint -- --type-aware --type-check
+    # ...
+    ```
 
-4. (Optional) Add lint scripts to `package.json`:
+4. (Optional) Add commands to `package.json` scripts:
 
-   ```json
-   {
-     "scripts": {
-       "lint": "oxlint",
-       "lint:fix": "oxlint --fix"
-     }
-   }
-   ```
+    ```json
+    {
+      "scripts": {
+        "lint": "oxlint",
+        "fix": "oxlint --fix"
+      }
+    }
+    ```
 
-   And run them with:
+    And run them with:
 
-   ```bash
-   # with bun
-   bun run lint
-   # with npm
-   npm run lint
-   # ...
-   ```
+    ```bash
+    # With aube
+    aube run lint
+    # With PNPM
+    pnpm run lint
+    # With NPM
+    npm run lint
+    # ...
+    ```
 
-## Work with ESLint
+## Work with ESLint (Flat config)
 
 If you want to migrate an existing project from totally ESLint to OxLint first & ESLint least, you can use [eslint-plugin-oxlint](https://github.com/oxc-project/eslint-plugin-oxlint) as below in your ESLint config:
 
