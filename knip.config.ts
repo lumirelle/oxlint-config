@@ -1,7 +1,33 @@
 import type { KnipConfig } from 'knip'
 
 export default {
-  entry: ['{src,test,fixtures,scripts}/**/*.{ts,js,vue}'],
-  ignoreFiles: ['taze.config.ts'],
-  ignoreDependencies: ['taze', '@oxlint/migrate'],
+  entry: ['scripts/generate-config.ts'],
+  ignoreFiles: [
+    // fixtures
+    'fixtures/**',
+    'test/fixtures/**',
+
+    // TODO(Lumirelle): Create a pull request to add taze plugin for knip.
+    'taze.config.ts',
+  ],
+  ignoreDependencies: [
+    // Rules generator
+    '@oxlint/migrate',
+
+    // Check tools
+    '@arethetypeswrong/cli',
+    'publint',
+
+    // Test fixtures prerequisites
+    'vue',
+
+    // Dependencies manager
+    'taze',
+
+    // Releasing tools
+    'bumpp',
+    'changelogithub',
+    'pkg-pr-new',
+    'npm',
+  ],
 } satisfies KnipConfig
