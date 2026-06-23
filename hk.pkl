@@ -50,7 +50,6 @@ local linters = new Mapping<String, Step> {
       )
     depends = List("oxlint")
   }
-  ["tsc"] = Builtins.tsc
 
   // Unused
   ["knip"] = (Builtins.knip) {
