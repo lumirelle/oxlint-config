@@ -38,7 +38,6 @@ const VUE_RULES_CURRENTLY_NOT_SUPPORTED_LIST = [
   'vue/multi-word-component-names',
   'vue/multiline-html-element-content-newline',
   'vue/mustache-interpolation-spacing',
-  'vue/no-async-in-computed-properties',
   'vue/no-child-content',
   'vue/no-deprecated-dollar-listeners-api',
   'vue/no-deprecated-dollar-scopedslots-api',

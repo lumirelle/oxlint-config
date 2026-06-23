@@ -37,22 +37,22 @@
         "vue": "^3.5.38"
       },
       "types": {
-        "@lumirelle/tsconfig": "^0.1.4",
+        "@lumirelle/tsconfig": "^0.1.5",
         "@types/bun": "^1.3.14",
-        "@types/node": "^25.9.3",
+        "@types/node": "^26.0.0",
         "typescript": "^6.0.3"
       },
       "baseline": {
         "@antfu/eslint-config": "^9.0.0",
-        "@oxlint/migrate": "^1.70.0",
-        "oxlint": "^1.70.0",
+        "@oxlint/migrate": "^1.71.0",
+        "oxlint": "^1.71.0",
         "oxlint-tsgolint": "^0.23.0"
       },
       "check": {
         "@arethetypeswrong/cli": "^0.18.4",
         "eslint": "^10.5.0",
-        "eslint-plugin-oxlint": "^1.70.0",
-        "knip": "^6.17.1",
+        "eslint-plugin-oxlint": "^1.71.0",
+        "knip": "^6.18.0",
         "publint": "^0.3.21"
       },
       "test": {
@@ -72,8 +72,8 @@
   },
   "peerDependencies": {
     "@antfu/eslint-config": ">=9.0.0",
-    "eslint-plugin-oxlint": ">=1.70.0",
-    "oxlint": ">=1.70.0",
+    "eslint-plugin-oxlint": ">=1.71.0",
+    "oxlint": ">=1.71.0",
     "oxlint-tsgolint": ">=0.23.0"
   },
   "peerDependenciesMeta": {

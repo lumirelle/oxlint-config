@@ -103,6 +103,7 @@
     "**/vite.config.ts.timestamp-*",
     "**/.vite/",
     "**/mise.local.toml",
+    "**/mise.lock",
     "**/node_modules",
     "**/package-lock.json",
     "**/yarn.lock",
@@ -336,7 +337,7 @@
       }
     ],
     "prefer-const": [
-      "warn",
+      "error",
       {
         "destructuring": "all",
         "ignoreReadBeforeAssign": true
@@ -358,7 +359,7 @@
       "error",
       "never"
     ],
-    "unused-imports/no-unused-imports": "warn",
+    "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [
       "error",
       {
@@ -1079,6 +1080,7 @@
       ],
       "rules": {
         "vue/no-arrow-functions-in-watch": "error",
+        "vue/no-async-in-computed-properties": "error",
         "vue/no-computed-properties-in-data": "error",
         "vue/no-deprecated-data-object-declaration": "error",
         "vue/no-deprecated-delete-set": "error",

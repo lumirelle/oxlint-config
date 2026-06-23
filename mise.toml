@@ -20,7 +20,7 @@ run = "bun install --lockfile-only && aube install"
 auto = true
 
 [tasks.dev]
-run = "./node_modules/.bin/@oxlint/migrate ./fixtures/eslint.config.js --output-file .oxlintrc.generated.json --with-nursery"
+run = "aube exec @oxlint/migrate ./fixtures/eslint.config.js --output-file .oxlintrc.generated.json --with-nursery"
 
 [tasks.build]
 run = "bun run ./scripts/generate-config.ts"
