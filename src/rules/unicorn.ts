@@ -6,7 +6,13 @@ export async function unicorn(): Promise<OxlintConfig> {
   const configItems = await _unicorn()
   const rules: any = getConfig(configItems, 'antfu/unicorn/rules').rules ?? {}
   return {
-    plugins: ['unicorn'],
-    rules,
+    plugins: [],
+    overrides: [
+      {
+        files: ['**/*.{,c,m}[jt]s{,x}'],
+        plugins: ['unicorn'],
+        rules,
+      },
+    ],
   }
 }

@@ -1,8 +1,7 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "plugins": [
-    "import",
-    "unicorn"
+    "import"
   ],
   "jsPlugins": [
     "eslint-plugin-antfu",
@@ -10,7 +9,7 @@
     "eslint-plugin-eslint-comments",
     "eslint-plugin-command",
     "eslint-plugin-perfectionist",
-    "eslint-plugin-e18e",
+    "@e18e/eslint-plugin",
     "@stylistic/eslint-plugin",
     "eslint-plugin-regexp"
   ],
@@ -440,21 +439,7 @@
     "e18e/prefer-date-now": "error",
     "e18e/prefer-regex-test": "error",
     "e18e/prefer-array-some": "error",
-    "unicorn/consistent-empty-array-spread": "error",
-    "unicorn/error-message": "error",
-    "unicorn/escape-case": "error",
-    "unicorn/new-for-builtins": "error",
-    "unicorn/no-instanceof-builtins": "error",
-    "unicorn/no-new-array": "error",
-    "unicorn/no-new-buffer": "error",
-    "unicorn/number-literal-case": "error",
-    "unicorn/prefer-dom-node-text-content": "error",
-    "unicorn/prefer-includes": "error",
-    "unicorn/prefer-node-protocol": "error",
-    "unicorn/prefer-number-properties": "error",
-    "unicorn/prefer-string-starts-ends-with": "error",
-    "unicorn/prefer-type-error": "error",
-    "unicorn/throw-new-error": "error",
+    "e18e/prefer-string-fromcharcode": "error",
     "@stylistic/array-bracket-spacing": [
       "error",
       "never"
@@ -916,11 +901,27 @@
         "jsdoc/require-property": "warn",
         "jsdoc/require-property-description": "warn",
         "jsdoc/require-property-name": "warn",
-        "jsdoc/require-returns-description": "warn"
+        "jsdoc/require-returns-description": "warn",
+        "unicorn/consistent-empty-array-spread": "error",
+        "unicorn/error-message": "error",
+        "unicorn/escape-case": "error",
+        "unicorn/new-for-builtins": "error",
+        "unicorn/no-instanceof-builtins": "error",
+        "unicorn/no-new-array": "error",
+        "unicorn/no-new-buffer": "error",
+        "unicorn/number-literal-case": "error",
+        "unicorn/prefer-dom-node-text-content": "error",
+        "unicorn/prefer-includes": "error",
+        "unicorn/prefer-node-protocol": "error",
+        "unicorn/prefer-number-properties": "error",
+        "unicorn/prefer-string-starts-ends-with": "error",
+        "unicorn/prefer-type-error": "error",
+        "unicorn/throw-new-error": "error"
       },
       "plugins": [
         "node",
-        "jsdoc"
+        "jsdoc",
+        "unicorn"
       ]
     },
     {
@@ -1067,7 +1068,7 @@
       },
       "jsPlugins": [
         "eslint-plugin-antfu",
-        "eslint-plugin-e18e"
+        "@e18e/eslint-plugin"
       ],
       "plugins": [
         "vitest",
@@ -1581,7 +1582,7 @@
       },
       "jsPlugins": [
         "eslint-plugin-antfu",
-        "eslint-plugin-e18e",
+        "@e18e/eslint-plugin",
         "@stylistic/eslint-plugin",
         "eslint-plugin-unused-imports"
       ],
