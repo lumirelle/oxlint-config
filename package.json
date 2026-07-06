@@ -56,8 +56,8 @@
         "publint": "^0.3.21"
       },
       "test": {
-        "@vitest/coverage-v8": "^4.1.9",
-        "vitest": "^4.1.9"
+        "@vitest/coverage-v8": "^4.1.10",
+        "vitest": "^4.1.10"
       },
       "release": {
         "bumpp": "^11.1.0",
