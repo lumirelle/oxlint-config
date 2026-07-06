@@ -63,7 +63,7 @@ local linters = new Mapping<String, Step> {
     check = "attw --pack --profile esm-only"
   }
   ["publint"] {
-    check = "publint --pack bun"
+    check = "publint"
   }
 }
 
