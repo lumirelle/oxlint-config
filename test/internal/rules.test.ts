@@ -175,6 +175,7 @@ describe('javascript rules', () => {
             },
           ],
           "no-unreachable": "error",
+          "no-unreachable-loop": "error",
           "no-unsafe-finally": "error",
           "no-unsafe-negation": "error",
           "no-unused-expressions": [
