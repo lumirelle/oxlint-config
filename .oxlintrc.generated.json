@@ -285,6 +285,7 @@
       }
     ],
     "no-unreachable": "error",
+    "no-unreachable-loop": "error",
     "no-unsafe-finally": "error",
     "no-unsafe-negation": "error",
     "no-unused-expressions": [
@@ -336,7 +337,7 @@
       }
     ],
     "prefer-const": [
-      "error",
+      "warn",
       {
         "destructuring": "all",
         "ignoreReadBeforeAssign": true
@@ -358,7 +359,7 @@
       "error",
       "never"
     ],
-    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-imports": "warn",
     "unused-imports/no-unused-vars": [
       "error",
       {

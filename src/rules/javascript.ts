@@ -4,7 +4,7 @@ import { getConfig } from '../utils'
 
 const JS_RULES_FILTERING_REG = /^(?:antfu|unused-import)/
 const JS_RULES_NO_INTEND_SUPPORT_LIST = ['no-dupe-args', 'no-octal', 'no-octal-escape', 'no-undef-init']
-const JS_RULES_CURRENTLY_NOT_SUPPORTED_LIST = ['no-restricted-syntax', 'no-unreachable-loop', 'one-var']
+const JS_RULES_CURRENTLY_NOT_SUPPORTED_LIST = ['no-restricted-syntax', 'one-var']
 
 export async function javascript(): Promise<OxlintConfig> {
   const configItems = await _javascript()
