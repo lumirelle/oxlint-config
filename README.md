@@ -150,8 +150,8 @@ Used by [Vue rules](internal/rules/vue.json), which are generated based on [@ant
 1. Install the package with OxLint, and `oxlint-tsgolint` is required for type-aware rules:
 
     ```bash
-    # aube, https://aube.en.dev/
-    aube add -D @lumirelle/oxlint-config oxlint oxlint-tsgolint
+    # nub, https://nubjs.com/
+    nub add -D @lumirelle/oxlint-config oxlint oxlint-tsgolint
     # PNPM
     pnpm add -d @lumirelle/oxlint-config oxlint oxlint-tsgolint
     # NPM
@@ -215,8 +215,8 @@ Used by [Vue rules](internal/rules/vue.json), which are generated based on [@ant
 3. Run oxlint cli:
 
     ```bash
-    # With aube
-    aube exec oxlint --type-aware --type-check
+    # With Nub
+    nub exec oxlint --type-aware --type-check
     # With PNPM
     pnpm exec oxlint --type-aware --type-check
     # With NPM
@@ -238,8 +238,8 @@ Used by [Vue rules](internal/rules/vue.json), which are generated based on [@ant
     And run them with:
 
     ```bash
-    # With aube
-    aube run lint
+    # With Nub
+    nub run lint
     # With PNPM
     pnpm run lint
     # With NPM
