@@ -1,63 +1,83 @@
-[env]
-_.path = ["./node_modules/.bin"]
-
 [tools]
 # Environments
-bun = "1.3.14"
-aube = "1.26.0"
+node = 'latest'
+'github:nubjs/nub' = { version = 'latest', postinstall = 'nub pm pin' }
 # Linters & Formatters
-hk = "1.50.0"
-stylua = "2.5.2"
-pkl = "0.32.0"
-node = "24"
+hk = 'latest'
+stylua = 'latest'
+pkl = 'latest'
 
-[deps.bun-aube]
-description = "Automatically install dependencies via aube & bun's lockfile."
-sources = ["package.json", "bun.lock"]
-outputs = ["node_modules/"]
-# Because aube's output lockfile has bugs,
-# we use `bun install --lockfile-only` to generate a lockfile
-run = "bun install --lockfile-only && aube install"
+[deps.nub]
+description = 'Automatically install Node.js dependencies via nub.'
+sources = ['package.json', 'nub.lock']
+outputs = ['node_modules/']
+run = 'nub install'
 auto = true
 
+[env]
+_.path = ['{{config_root}}/node_modules/.bin']
+
 [tasks.dev]
-run = "aube exec @oxlint/migrate ./fixtures/eslint.config.js --output-file .oxlintrc.generated.json --with-nursery"
+description = 'Migrate @antfu/eslint-config with @oxlint/migrate and generate .oxlintrc.generated.json.'
+run = 'nub exec @oxlint/migrate ./fixtures/eslint.config.js --output-file .oxlintrc.generated.json --with-nursery'
 
 [tasks.build]
-run = "bun run ./scripts/generate-config.ts"
+description = 'Generate OxLint configuration.'
+run = 'nub run ./scripts/generate-config.ts'
 
 [tasks.start]
-run = { task = "check" }
+description = 'Run all checks.'
+run = { task = 'check' }
 
 [tasks.check]
-run = "hk check --all"
+description = 'Run all checks.'
+usage = '''
+flag "-s --staged" help="Run on staged files only without stashing unstaged changes"
+arg "[rest]" var=#true help="Additional arguments to pass to the test runner"
+'''
+run = '''
+hk check {{ "--staged" if usage.staged else "--all" }} {{ usage.rest | join(sep=' ') if usage.rest else '' }}
+'''
 
 [tasks.fix]
-run = "hk fix --all"
+description = 'Fix all check issues.'
+usage = '''
+flag "-s --staged" help="Run on staged files only without stashing unstaged changes"
+arg "[rest]" var=#true help="Additional arguments to pass to the test runner"
+'''
+run = '''
+hk fix {{ "--staged" if usage.staged else "--all" }} {{ usage.rest | join(sep=' ') if usage.rest else '' }}
+'''
 
 [tasks.test]
-depends = "build"
-run = "vitest run"
-
-[tasks."test:watch"]
-run = "vitest"
+description = "Run tests."
+usage = '''
+flag "-w --watch" help="Watch files for changes and rerun tests"
+arg "[rest]" var=#true help="Additional arguments to pass to the test runner"
+'''
+run = '''
+vitest {{ '' if usage.watch else 'run' }} {{ usage.rest | join(sep=' ') if usage.rest else '' }}
+'''
 
 [tasks.prerelease]
+description = 'Prepare for release.'
+# All tasks in parallel.
 run = { tasks = ["check", "test"] }
 
 [tasks.release]
+description = 'Bump the version and push new version of this workflow with a Git tag.'
 depends = "prerelease"
 run = "bumpp"
 raw = true
 
 [tasks.changelog]
+description = 'Generate GitHub changelog.'
 run = "changelogithub"
 
 [tasks.publish]
-run = [
-  "bun pm pack --filename release.tgz",
-  "npm publish ./release.tgz --access public --tag latest",
-]
+description = 'Publish the package.'
+run = "nub publish --provenance"
 
-[tasks."publish:commit"]
-run = "pkg-pr-new publish --bun"
+[tasks.publish-commit]
+description = 'Publish the committed changes.'
+run = "pkg-pr-new publish"

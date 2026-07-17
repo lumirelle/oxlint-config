@@ -140,9 +140,14 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
 
-# Mise local config
+# https://mise.jdx.dev/configuration.html
+# https://mise.jdx.dev/configuration/environments.html
+.mise.*.local.toml
+.mise.local.toml
+mise.*.local.toml
 mise.local.toml
-# XXX: Mise has a bug on resolving npm backend lockfile on MacOS & Linux,
-# the workaround is to keep mise.lock locally, until it fixed.
-# See https://github.com/jdx/mise/discussions/7983#discussioncomment-17318780
-mise.lock
+.mise/*.local.toml
+mise/*.local.toml
+
+# https://mise.jdx.dev/configuration.html#tool-versions
+#.tool-versions

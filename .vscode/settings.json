@@ -6,9 +6,6 @@
     "source.fixAll.eslint": "always",
     "source.organizeImports": "never"
   },
-  "oxc.typeAware": true,
-  "eslint.runtime": "bun",
-  "eslint.execArgv": ["-b"],
   "eslint.validate": [
     "javascript",
     "javascriptreact",

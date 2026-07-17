@@ -1,0 +1,22 @@
+{
+  "entry": ["scripts/generate-config.ts"],
+  "ignoreFiles": [
+    "**/fixtures/**"
+  ],
+  "ignoreDependencies": [
+    // Rules generator
+    "@oxlint/migrate",
+    // Quality
+    "@arethetypeswrong/cli",
+    "publint",
+    // Test fixtures prerequisites
+    "vue",
+    // Node.js dependencies manager
+    "taze",
+    // Node.js releasing tools
+    "bumpp",
+    "changelogithub",
+    "pkg-pr-new",
+    "npm"
+  ]
+}
