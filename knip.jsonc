@@ -16,7 +16,6 @@
     // Node.js releasing tools
     "bumpp",
     "changelogithub",
-    "pkg-pr-new",
-    "npm"
+    "pkg-pr-new"
   ]
 }
