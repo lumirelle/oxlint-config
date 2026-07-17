@@ -17,6 +17,9 @@ auto = true
 [env]
 _.path = ['{{config_root}}/node_modules/.bin']
 
+# See https://github.com/webpro-nl/knip/issues/1813 & https://github.com/oxc-project/oxc/issues/11834
+KNIP_DISABLE_RAW_TRANSFER = 1
+
 [tasks.dev]
 description = 'Migrate @antfu/eslint-config with @oxlint/migrate and generate .oxlintrc.generated.json.'
 run = 'nub exec @oxlint/migrate ./fixtures/eslint.config.js --output-file .oxlintrc.generated.json --with-nursery'
