@@ -5,6 +5,7 @@ local eslint_support_filetypes = {
   "javascriptreact",
   "typescript",
   "typescriptreact",
+  "vue",
   -- Configurations
   "json",
   "jsonc",
@@ -23,6 +24,7 @@ local eslint_support_file_patterns = {
   "*.mts",
   "*.cts",
   "*.tsx",
+  "*.vue",
   -- Configurations
   "*.json",
   "*.jsonc",

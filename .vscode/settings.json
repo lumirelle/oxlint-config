@@ -7,23 +7,19 @@
     "source.organizeImports": "never"
   },
   "eslint.validate": [
+    // Code
     "javascript",
     "javascriptreact",
     "typescript",
     "typescriptreact",
     "vue",
-    "html",
-    "markdown",
+    // Configurations
     "json",
     "jsonc",
     "yaml",
     "toml",
-    "xml",
-    "css",
-    "postcss",
-    "scss",
-    "sass",
-    "less"
+    // Documentations
+    "markdown"
   ],
 
   "files.associations": {
