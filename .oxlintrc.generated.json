@@ -1266,6 +1266,7 @@
               "activationEvents",
               "contributes",
               "scripts",
+              "scripts-info",
               "peerDependencies",
               "peerDependenciesMeta",
               "dependencies",

@@ -9,7 +9,7 @@
     "eslint-plugin-eslint-comments",
     "eslint-plugin-command",
     "eslint-plugin-perfectionist",
-    "@e18e/eslint-plugin",
+    "eslint-plugin-e18e",
     "@stylistic/eslint-plugin",
     "eslint-plugin-regexp"
   ],
@@ -101,8 +101,12 @@
     "**/vite.config.js.timestamp-*",
     "**/vite.config.ts.timestamp-*",
     "**/.vite/",
+    "**/.mise.*.local.toml",
+    "**/.mise.local.toml",
+    "**/mise.*.local.toml",
     "**/mise.local.toml",
-    "**/mise.lock",
+    ".mise/*.local.toml",
+    "mise/*.local.toml",
     "**/node_modules",
     "**/package-lock.json",
     "**/yarn.lock",
@@ -337,7 +341,7 @@
       }
     ],
     "prefer-const": [
-      "warn",
+      "error",
       {
         "destructuring": "all",
         "ignoreReadBeforeAssign": true
@@ -359,7 +363,7 @@
       "error",
       "never"
     ],
-    "unused-imports/no-unused-imports": "warn",
+    "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [
       "error",
       {
@@ -1069,7 +1073,7 @@
       },
       "jsPlugins": [
         "eslint-plugin-antfu",
-        "@e18e/eslint-plugin"
+        "eslint-plugin-e18e"
       ],
       "plugins": [
         "vitest",
@@ -1583,7 +1587,7 @@
       },
       "jsPlugins": [
         "eslint-plugin-antfu",
-        "@e18e/eslint-plugin",
+        "eslint-plugin-e18e",
         "@stylistic/eslint-plugin",
         "eslint-plugin-unused-imports"
       ],
