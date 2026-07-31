@@ -4,6 +4,8 @@ import { antfu } from '@antfu/eslint-config'
 export default antfu(
   {
     type: 'lib',
+    // To ensuore the generated result is always consistent.
+    isInEditor: false,
   },
 ).override('antfu/perfectionist/setup', {
   rules: {
