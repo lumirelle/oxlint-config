@@ -1,0 +1,29 @@
+import { describe, expect, it } from 'vitest'
+import ts from '../.oxlintrc.ts.json'
+
+describe('.oxlintrc.ts.json', () => {
+  it('should match snapshot', () => {
+    expect(ts).toMatchInlineSnapshot(`
+      {
+        "$schema": "./node_modules/oxlint/configuration_schema.json",
+        "extends": [
+          "./internal/defaults/ignores.json",
+          "./internal/rules/javascript.json",
+          "./internal/rules/oxc.json",
+          "./internal/rules/unicorn.json",
+          "./internal/rules/imports.json",
+          "./internal/rules/promise.json",
+          "./internal/rules/node.json",
+          "./internal/rules/jsdoc.json",
+          "./internal/rules/typescript.json",
+          "./internal/disables/scripts.json",
+          "./internal/disables/cli.json",
+          "./internal/disables/bin.json",
+          "./internal/disables/dts.json",
+          "./internal/disables/cjs.json",
+          "./internal/disables/config-files.json",
+        ],
+      }
+    `)
+  })
+})
