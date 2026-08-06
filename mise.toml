@@ -22,8 +22,10 @@ KNIP_DISABLE_RAW_TRANSFER = 1
 
 [task_config.input_groups]
 deps = ["package.json", "nub.lock"]
-hk = ["*.js", "*.mjs", "*.cjs", "*.jsx", "*.ts", "*.mts", "*.cts", "*.tsx", "*.vue", "*.json", "*.jsonc", "*.yaml", "*.yml", "*.toml", "*.md", "*.mdc", "*.mdx", "*.lua", "hk.pkl"]
-vitest = ["test", "internal", ".oxlintrc.*.json"]
+src = ["src"]
+test_src = ["internal", ".oxlintrc.*.json"]
+check = ["*.js", "*.mjs", "*.cjs", "*.jsx", "*.ts", "*.mts", "*.cts", "*.tsx", "*.vue", "*.json", "*.jsonc", "*.yaml", "*.yml", "*.toml", "*.md", "*.mdc", "*.mdx", "*.lua", "hk.pkl"]
+test = ["test"]
 
 [tasks.dev]
 description = 'Migrate @antfu/eslint-config with @oxlint/migrate and generate .oxlintrc.generated.json.'
@@ -35,7 +37,7 @@ cache = { enabled = true }
 [tasks.build]
 description = 'Generate OxLint configuration.'
 run = 'nub ./scripts/generate-config.ts'
-sources = ["@group:deps", "src"]
+sources = ["@group:deps", "@group:src"]
 outputs = ["internal"]
 cache = { enabled = true }
 
@@ -52,7 +54,7 @@ arg "[rest]" var=#true help="Additional arguments to pass to the test runner"
 run = '''
 hk check {{ "--staged" if usage.staged else "--all" }} {{ usage.rest | join(sep=' ') if usage.rest else '' }}
 '''
-sources = ["@group:deps", "@group:hk"]
+sources = ["@group:deps", "@group:check"]
 outputs = []
 cache = { enabled = true, command_inputs = ["hk --version"] }
 
@@ -65,7 +67,7 @@ arg "[rest]" var=#true help="Additional arguments to pass to the test runner"
 run = '''
 hk fix {{ "--staged" if usage.staged else "--all" }} {{ usage.rest | join(sep=' ') if usage.rest else '' }}
 '''
-sources = ["@group:deps", "@group:hk"]
+sources = ["@group:deps", "@group:check"]
 outputs = []
 cache = { enabled = true, command_inputs = ["hk --version"] }
 
@@ -78,9 +80,9 @@ arg "[rest]" var=#true help="Additional arguments to pass to the test runner"
 run = '''
 vitest {{ '' if usage.watch else 'run' }} {{ usage.rest | join(sep=' ') if usage.rest else '' }}
 '''
-sources = ["@group:deps", "@group:vitest"]
+sources = ["@group:deps", "@group:test_src", "@group:test"]
 outputs = []
-cache = { enabled = true }
+cache = { enabled = true, command_inputs = ["node --version"] }
 
 [tasks.prerelease]
 description = 'Prepare for release.'
