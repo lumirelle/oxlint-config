@@ -23,20 +23,20 @@ KNIP_DISABLE_RAW_TRANSFER = 1
 [task_config.input_groups]
 deps = ["package.json", "nub.lock"]
 hk = ["*.js", "*.mjs", "*.cjs", "*.jsx", "*.ts", "*.mts", "*.cts", "*.tsx", "*.vue", "*.json", "*.jsonc", "*.yaml", "*.yml", "*.toml", "*.md", "*.mdc", "*.mdx", "*.lua", "hk.pkl"]
-vitest = ["test/**", "internal/**", ".oxlintrc.*.json"]
+vitest = ["test", "internal", ".oxlintrc.*.json"]
 
 [tasks.dev]
 description = 'Migrate @antfu/eslint-config with @oxlint/migrate and generate .oxlintrc.generated.json.'
-run = 'nub exec @oxlint/migrate ./fixtures/eslint.config.js --output-file .oxlintrc.generated.json --with-nursery'
-sources = ["@group:deps", "./fixtures/eslint.config.js"]
+run = 'nub exec @oxlint/migrate fixtures/eslint.config.js --output-file .oxlintrc.generated.json --with-nursery'
+sources = ["@group:deps", "fixtures/eslint.config.js"]
 outputs = [".oxlintrc.generated.json"]
 cache = { enabled = true }
 
 [tasks.build]
 description = 'Generate OxLint configuration.'
 run = 'nub ./scripts/generate-config.ts'
-sources = ["@group:deps", "src/**"]
-outputs = ["internal/**"]
+sources = ["@group:deps", "src"]
+outputs = ["internal"]
 cache = { enabled = true }
 
 [tasks.start]
