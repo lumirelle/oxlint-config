@@ -6,6 +6,7 @@
     "typeCheck": true
   },
   "ignorePatterns": [
-    "test/fixtures/**"
+    "test/fixtures/**",
+    ".oxlintrc.generated.json"
   ]
 }
