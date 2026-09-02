@@ -212,6 +212,12 @@ describe('javascript rules', () => {
           "no-useless-return": "error",
           "no-var": "error",
           "no-with": "error",
+          "one-var": [
+            "error",
+            {
+              "initialized": "never",
+            },
+          ],
           "prefer-arrow-callback": [
             "error",
             {
