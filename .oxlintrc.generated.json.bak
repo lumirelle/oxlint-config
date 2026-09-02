@@ -333,6 +333,12 @@
         "ignoreConstructors": false
       }
     ],
+    "one-var": [
+      "error",
+      {
+        "initialized": "never"
+      }
+    ],
     "prefer-arrow-callback": [
       "error",
       {
