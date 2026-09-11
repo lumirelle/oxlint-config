@@ -1487,6 +1487,14 @@
           2
         ],
         "yml/key-spacing": "error",
+        "yml/no-multiple-empty-lines": [
+          "error",
+          {
+            "max": 1,
+            "maxBOF": 0,
+            "maxEOF": 0
+          }
+        ],
         "yml/no-tab-indent": "error",
         "yml/quotes": [
           "error",
