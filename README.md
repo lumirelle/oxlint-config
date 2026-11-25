@@ -1,5 +1,8 @@
 # Lumirelle's OxLint Config
 
+> [!Caution]
+> Use [`@lumirelle/linter-config`](https://github.com/lumirelle/linter-config) instead, which support dynamic configuration.
+
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![bundle][bundle-src]][bundle-href]
